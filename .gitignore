@@ -19,6 +19,7 @@ yarn-error.log*
 .vscode/
 .vercel/
 .trae/cache/
+.trae/downloads/
 
 # coverage
 coverage/
