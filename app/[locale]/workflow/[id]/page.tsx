@@ -43,13 +43,13 @@ export default async function WorkflowPage({ params }: { params: { locale: strin
                         </div>
 
                         <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-apple-card border border-white/20">
-                            <h2 className="text-2xl font-semibold mb-4">Description</h2>
+                            <h2 className="text-2xl font-semibold mb-4">{t.description}</h2>
                             <p className="text-gray-600 leading-relaxed text-lg">{workflow.description}</p>
                         </div>
 
                         {/* Reviews Section */}
                         <div className="space-y-6">
-                            <h2 className="text-2xl font-semibold px-2">Reviews</h2>
+                            <h2 className="text-2xl font-semibold px-2">{t.reviews}</h2>
                             <ReviewForm />
                             <ReviewList reviews={workflow.reviews} />
                         </div>
@@ -81,29 +81,29 @@ export default async function WorkflowPage({ params }: { params: { locale: strin
                             </div>
 
                             <div className="flex items-baseline gap-2 mb-8">
-                                <span className="text-4xl font-bold text-gray-900">{workflow.price === 0 ? 'Free' : `$${workflow.price}`}</span>
+                                <span className="text-4xl font-bold text-gray-900">{workflow.price === 0 ? t.free : `$${workflow.price}`}</span>
                             </div>
 
                             <div className="space-y-3">
                                 <button className="w-full py-4 rounded-full bg-apple-blue text-white font-semibold shadow-lg shadow-blue-500/30 hover:bg-blue-600 transition-all active:scale-95">
-                                    {workflow.price === 0 ? 'Get Workflow' : 'Buy Now'}
+                                    {workflow.price === 0 ? t.get_workflow : t.buy_now}
                                 </button>
                                 <button className="w-full py-4 rounded-full bg-gray-100 text-gray-900 font-medium hover:bg-gray-200 transition-all active:scale-95">
-                                    Preview
+                                    {t.preview}
                                 </button>
                             </div>
 
                             <div className="mt-8 pt-8 border-t border-gray-100 space-y-4">
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-gray-500">Version</span>
+                                    <span className="text-gray-500">{t.version}</span>
                                     <span className="font-medium">{workflow.version}</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-gray-500">n8n Version</span>
+                                    <span className="text-gray-500">{t.n8n_version}</span>
                                     <span className="font-medium bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">{workflow.n8nVersion}</span>
                                 </div>
                                 <div className="flex justify-between text-sm">
-                                    <span className="text-gray-500">Last Updated</span>
+                                    <span className="text-gray-500">{t.last_updated}</span>
                                     <span className="font-medium">{workflow.updatedAt}</span>
                                 </div>
                             </div>

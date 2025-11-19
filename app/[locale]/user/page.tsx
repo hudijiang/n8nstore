@@ -36,7 +36,7 @@ export default async function UserPage({ params }: { params: { locale: string } 
                         </div>
 
                         <nav className="bg-white/80 backdrop-blur-xl rounded-3xl p-4 shadow-apple-card border border-white/20 space-y-1">
-                            {['Profile', 'My Workflows', 'Orders', 'Settings'].map((item, i) => (
+                            {[t.profile, t.my_workflows, t.orders, t.settings].map((item, i) => (
                                 <button key={item} className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${i === 0 ? 'bg-apple-blue text-white font-medium' : 'hover:bg-gray-50 text-gray-600'}`}>
                                     {item}
                                 </button>
@@ -47,16 +47,16 @@ export default async function UserPage({ params }: { params: { locale: string } 
                     {/* Main Content */}
                     <div className="flex-1 space-y-8">
                         <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-apple-card border border-white/20">
-                            <h2 className="text-2xl font-bold mb-6">Recent Orders</h2>
+                            <h2 className="text-2xl font-bold mb-6">{t.recent_orders}</h2>
                             <div className="overflow-x-auto">
                                 <table className="w-full">
                                     <thead>
                                         <tr className="text-left border-b border-gray-100">
-                                            <th className="pb-4 font-medium text-gray-500 pl-4">Order ID</th>
-                                            <th className="pb-4 font-medium text-gray-500">Item</th>
-                                            <th className="pb-4 font-medium text-gray-500">Date</th>
-                                            <th className="pb-4 font-medium text-gray-500">Amount</th>
-                                            <th className="pb-4 font-medium text-gray-500 pr-4">Status</th>
+                                            <th className="pb-4 font-medium text-gray-500 pl-4">{t.order_id}</th>
+                                            <th className="pb-4 font-medium text-gray-500">{t.item}</th>
+                                            <th className="pb-4 font-medium text-gray-500">{t.date}</th>
+                                            <th className="pb-4 font-medium text-gray-500">{t.amount}</th>
+                                            <th className="pb-4 font-medium text-gray-500 pr-4">{t.status}</th>
                                         </tr>
                                     </thead>
                                     <tbody className="text-sm">
