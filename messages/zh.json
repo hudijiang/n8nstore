@@ -1,0 +1,21 @@
+{
+  "title": "n8n 工作流商店",
+  "search_placeholder": "搜索工作流",
+  "hero_title": "发现精选 n8n 工作流，自动化您的任务。",
+  "hero_description": "为您的业务提供的专业模板。",
+  "featured_workflows": "精选工作流",
+  "view_all": "查看全部",
+  "load_more": "加载更多",
+  "free": "免费",
+  "paid": "付费",
+  "copy_json": "复制 JSON",
+  "download_json": "下载 JSON",
+  "login_to_buy": "登录购买",
+  "switch_language": "语言",
+  "workflow_rss_title": "RSS 转 Telegram",
+  "workflow_rss_desc": "订阅 RSS 源并自动推送到 Telegram 频道。",
+  "workflow_github_title": "GitHub 问题通知",
+  "workflow_github_desc": "监控新的 GitHub 问题并发送通知。",
+  "workflow_email_title": "邮件解析到表格",
+  "workflow_email_desc": "解析邮件并将结构化数据保存到 Google Sheets。"
+}

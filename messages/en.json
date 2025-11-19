@@ -1,0 +1,21 @@
+{
+  "title": "n8n Workflow Store",
+  "search_placeholder": "Search workflows",
+  "hero_title": "Discover curated n8n workflows to automate your tasks.",
+  "hero_description": "Professional templates for your business.",
+  "featured_workflows": "Featured Workflows",
+  "view_all": "View All",
+  "load_more": "Load More Workflows",
+  "free": "Free",
+  "paid": "Paid",
+  "copy_json": "Copy JSON",
+  "download_json": "Download JSON",
+  "login_to_buy": "Login to buy",
+  "switch_language": "Language",
+  "workflow_rss_title": "RSS to Telegram",
+  "workflow_rss_desc": "Subscribe RSS feeds and push to Telegram channel automatically.",
+  "workflow_github_title": "GitHub Issue Notifier",
+  "workflow_github_desc": "Monitor new GitHub issues and send notifications.",
+  "workflow_email_title": "Email Parser to Sheets",
+  "workflow_email_desc": "Parse emails and save structured data to Google Sheets."
+}
