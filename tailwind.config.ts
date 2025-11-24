@@ -1,48 +1,51 @@
 import type { Config } from 'tailwindcss'
 
-export default {
-  content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}'],
+const config: Config = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
       colors: {
-        // Apple System Colors
-        'apple-blue': '#007AFF',
-        'apple-gray': {
-          50: '#F9FAFB',
-          100: '#F2F2F7', // System Gray 6
-          200: '#E5E5EA', // System Gray 5
-          300: '#D1D1D6', // System Gray 4
-          400: '#C7C7CC', // System Gray 3
-          500: '#AEAEB2', // System Gray 2
-          600: '#8E8E93', // System Gray
-          700: '#636366',
-          800: '#48484A',
-          900: '#3A3A3C',
-          950: '#1C1C1E',
-        },
-        'apple-bg': '#F5F5F7',
+        brand: 'var(--color-brand)', // #35bfab
+        primary: 'var(--color-primary)', // #334f52
+        secondary: 'var(--color-secondary)', // #7b888e
+        bg: 'var(--color-bg)', // #eeeeee
+        border: 'var(--color-border)', // #fff
       },
       fontFamily: {
         sans: [
-          'Inter',
+          'PingFang SC',
           '-apple-system',
-          'BlinkMacSystemFont',
+          'system-ui',
           'Segoe UI',
           'Roboto',
-          'Helvetica',
-          'Arial',
+          'Ubuntu',
+          'Cantarell',
+          'Noto Sans',
           'sans-serif',
+          'BlinkMacSystemFont',
+          'Helvetica Neue',
+          'Hiragino Sans GB',
+          'Microsoft YaHei',
+          'Arial',
         ],
+        averia: ['"Averia Gruesa Libre"', 'sans-serif'],
+      },
+      borderRadius: {
+        '4xl': '40px',
       },
       boxShadow: {
-        'apple-card': '0 4px 24px rgba(0, 0, 0, 0.04)',
-        'apple-hover': '0 8px 32px rgba(0, 0, 0, 0.08)',
-        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
+        'glass-card': '0 40px 50px -32px rgba(0, 0, 0, 0.05), inset 0 0 20px rgba(255, 255, 255, 0.25)',
+        'nav-hover': '0 4px 12px rgba(0, 0, 0, 0.05)',
       },
       backdropBlur: {
         xs: '2px',
-      }
-    }
+      },
+    },
   },
-  plugins: []
-} satisfies Config
+  plugins: [],
+}
+export default config

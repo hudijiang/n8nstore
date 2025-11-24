@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import Card from '@/components/ui/Card'
 
 async function getMessages(locale: string) {
     const mod = await import(`../../../messages/${locale}.json`)
@@ -8,78 +8,63 @@ async function getMessages(locale: string) {
 export default async function UserPage({ params }: { params: { locale: string } }) {
     const t = await getMessages(params.locale)
 
-    // Mock user data
-    const user = {
-        name: 'Alex Chen',
-        email: 'alex@example.com',
-        avatar: 'https://ui-avatars.com/api/?name=Alex+Chen&background=0D8ABC&color=fff',
-        joined: '2023-09-01'
-    }
-
-    const orders = [
-        { id: 'ORD-001', date: '2023-10-01', item: 'GitHub Issue Notifier', amount: 9.99, status: 'Completed' },
-        { id: 'ORD-002', date: '2023-10-05', item: 'SEO Analyzer', amount: 14.99, status: 'Completed' }
-    ]
-
     return (
-        <>
-            <Header title={t.title} locale={params.locale} label={t.switch_language} />
-
-            <main className="container py-12">
-                <div className="flex flex-col md:flex-row gap-8">
-                    {/* Sidebar */}
-                    <aside className="w-full md:w-64 space-y-4">
-                        <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-6 shadow-apple-card border border-white/20 text-center">
-                            <img src={user.avatar} alt={user.name} className="w-20 h-20 rounded-full mx-auto mb-4 shadow-md" />
-                            <h2 className="font-semibold text-lg">{user.name}</h2>
-                            <p className="text-sm text-gray-500">{user.email}</p>
+        <div className="pb-20">
+            <div className="flex flex-col lg:flex-row gap-8">
+                {/* Sidebar */}
+                <aside className="w-full lg:w-64 shrink-0 space-y-6">
+                    <Card className="p-6 flex flex-col items-center bg-white/60">
+                        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-brand to-teal-400 p-1 mb-4">
+                            <img src="https://i.pravatar.cc/150?u=me" alt="User" className="w-full h-full rounded-full border-4 border-white" />
                         </div>
+                        <h2 className="text-xl font-bold text-primary font-averia">Alex Chen</h2>
+                        <p className="text-secondary text-sm">Pro Member</p>
+                    </Card>
 
-                        <nav className="bg-white/80 backdrop-blur-xl rounded-3xl p-4 shadow-apple-card border border-white/20 space-y-1">
+                    <Card className="p-2 bg-white/60">
+                        <nav className="space-y-1">
                             {[t.profile, t.my_workflows, t.orders, t.settings].map((item, i) => (
-                                <button key={item} className={`w-full text-left px-4 py-3 rounded-xl transition-colors ${i === 0 ? 'bg-apple-blue text-white font-medium' : 'hover:bg-gray-50 text-gray-600'}`}>
+                                <button key={item} className={`w-full text-left px-4 py-3 rounded-2xl transition-all font-medium ${i === 0 ? 'bg-brand text-white shadow-lg shadow-brand/20' : 'text-secondary hover:bg-white hover:text-primary'}`}>
                                     {item}
                                 </button>
                             ))}
                         </nav>
-                    </aside>
+                    </Card>
+                </aside>
 
-                    {/* Main Content */}
-                    <div className="flex-1 space-y-8">
-                        <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-apple-card border border-white/20">
-                            <h2 className="text-2xl font-bold mb-6">{t.recent_orders}</h2>
-                            <div className="overflow-x-auto">
-                                <table className="w-full">
-                                    <thead>
-                                        <tr className="text-left border-b border-gray-100">
-                                            <th className="pb-4 font-medium text-gray-500 pl-4">{t.order_id}</th>
-                                            <th className="pb-4 font-medium text-gray-500">{t.item}</th>
-                                            <th className="pb-4 font-medium text-gray-500">{t.date}</th>
-                                            <th className="pb-4 font-medium text-gray-500">{t.amount}</th>
-                                            <th className="pb-4 font-medium text-gray-500 pr-4">{t.status}</th>
+                {/* Main Content */}
+                <div className="flex-1 space-y-8">
+                    <Card className="p-8 bg-white/60">
+                        <h2 className="text-2xl font-bold mb-6 font-averia text-primary">{t.recent_orders}</h2>
+                        <div className="overflow-x-auto">
+                            <table className="w-full">
+                                <thead>
+                                    <tr className="text-left border-b border-gray-200/50">
+                                        <th className="pb-4 font-medium text-secondary pl-4">{t.order_id}</th>
+                                        <th className="pb-4 font-medium text-secondary">{t.item}</th>
+                                        <th className="pb-4 font-medium text-secondary">{t.date}</th>
+                                        <th className="pb-4 font-medium text-secondary">{t.amount}</th>
+                                        <th className="pb-4 font-medium text-secondary pr-4">{t.status}</th>
+                                    </tr>
+                                </thead>
+                                <tbody className="text-sm">
+                                    {[1, 2, 3].map((i) => (
+                                        <tr key={i} className="border-b border-gray-100/50 hover:bg-white/50 transition-colors">
+                                            <td className="py-4 pl-4 font-mono text-secondary">#ORD-2024-00{i}</td>
+                                            <td className="py-4 font-medium text-primary">GitHub Issue Notifier</td>
+                                            <td className="py-4 text-secondary">Jan {20 - i}, 2024</td>
+                                            <td className="py-4 font-medium text-primary">$9.90</td>
+                                            <td className="py-4 pr-4">
+                                                <span className="px-2.5 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Paid</span>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody className="text-sm">
-                                        {orders.map((order) => (
-                                            <tr key={order.id} className="border-b border-gray-50 last:border-0 hover:bg-gray-50/50 transition-colors">
-                                                <td className="py-4 pl-4 font-mono text-gray-600">{order.id}</td>
-                                                <td className="py-4 font-medium">{order.item}</td>
-                                                <td className="py-4 text-gray-500">{order.date}</td>
-                                                <td className="py-4 font-medium">${order.amount}</td>
-                                                <td className="py-4 pr-4">
-                                                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
-                                                        {order.status}
-                                                    </span>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
+                    </Card>
                 </div>
-            </main>
-        </>
+            </div>
+        </div>
     )
 }
