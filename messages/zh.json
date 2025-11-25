@@ -35,5 +35,15 @@
   "profile": "个人资料",
   "my_workflows": "我的工作流",
   "orders": "订单",
-  "settings": "设置"
+  "settings": "设置",
+  "nav_home": "首页",
+  "nav_explore": "探索",
+  "nav_orders": "我的订单",
+  "nav_profile": "个人资料",
+  "search_workflows": "搜索工作流...",
+  "filter_all": "全部",
+  "filter_automation": "自动化",
+  "filter_integration": "集成",
+  "filter_finance": "金融",
+  "filter_productivity": "生产力"
 }

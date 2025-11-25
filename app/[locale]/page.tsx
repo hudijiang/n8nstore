@@ -1,4 +1,3 @@
-import SearchBar from '@/components/SearchBar'
 import WorkflowCard from '@/components/WorkflowCard'
 import Card from '@/components/ui/Card'
 
@@ -22,27 +21,30 @@ export default async function Page({ params }: { params: { locale: string } }) {
 
   return (
     <div className="space-y-6 pb-20">
-      {/* Hero / Search Section */}
-      <Card className="w-full p-8 flex flex-col items-center text-center space-y-6 bg-white/60">
+      {/* Hero Section */}
+      <Card className="w-full p-8 flex flex-col items-center text-center space-y-4 bg-white/60">
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary font-averia">
           {t.hero_title}
         </h1>
         <p className="text-lg text-secondary max-w-2xl mx-auto">
           {t.hero_description}
         </p>
-        <div className="w-full max-w-xl">
-          <SearchBar placeholder={t.search_placeholder} />
-        </div>
       </Card>
 
       {/* Filters */}
       <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-none">
-        {['All', 'Automation', 'Integration', 'Finance', 'Productivity'].map((filter, i) => (
+        {[
+          { key: 'all', label: t.filter_all || 'All' },
+          { key: 'automation', label: t.filter_automation || 'Automation' },
+          { key: 'integration', label: t.filter_integration || 'Integration' },
+          { key: 'finance', label: t.filter_finance || 'Finance' },
+          { key: 'productivity', label: t.filter_productivity || 'Productivity' }
+        ].map((filter, i) => (
           <button
-            key={filter}
+            key={filter.key}
             className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${i === 0 ? 'bg-brand text-white shadow-lg shadow-brand/20' : 'bg-white/50 text-secondary hover:bg-white hover:text-primary'}`}
           >
-            {filter}
+            {filter.label}
           </button>
         ))}
       </div>

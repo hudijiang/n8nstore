@@ -35,5 +35,15 @@
   "profile": "Profile",
   "my_workflows": "My Workflows",
   "orders": "Orders",
-  "settings": "Settings"
+  "settings": "Settings",
+  "nav_home": "Home",
+  "nav_explore": "Explore",
+  "nav_orders": "My Orders",
+  "nav_profile": "Profile",
+  "search_workflows": "Search workflows...",
+  "filter_all": "All",
+  "filter_automation": "Automation",
+  "filter_integration": "Integration",
+  "filter_finance": "Finance",
+  "filter_productivity": "Productivity"
 }
