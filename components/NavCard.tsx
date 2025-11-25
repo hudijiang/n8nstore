@@ -26,12 +26,12 @@ const getMenuList = (t: Record<string, string>) => [
     {
         icon: ShoppingBag,
         label: t.nav_orders || 'My Orders',
-        href: '/orders',
+        href: '/user',
     },
     {
         icon: User,
         label: t.nav_profile || 'Profile',
-        href: '/user',
+        href: '/profile',
     },
 ]
 
