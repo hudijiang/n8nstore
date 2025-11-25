@@ -1,8 +1,8 @@
 {
   "title": "Tienda de flujos de trabajo n8n",
   "search_placeholder": "Buscar flujos de trabajo",
-  "hero_title": "Discover curated n8n workflows to automate your tasks.",
-  "hero_description": "Professional templates for your business.",
+  "hero_title": "Descubre flujos de trabajo n8n seleccionados para automatizar tus tareas.",
+  "hero_description": "Plantillas profesionales para tu negocio.",
   "featured_workflows": "Featured Workflows",
   "view_all": "View All",
   "load_more": "Load More Workflows",
@@ -35,5 +35,15 @@
   "profile": "Profile",
   "my_workflows": "My Workflows",
   "orders": "Orders",
-  "settings": "Settings"
+  "settings": "Configuración",
+  "nav_home": "Inicio",
+  "nav_explore": "Explorar",
+  "nav_orders": "Mis pedidos",
+  "nav_profile": "Perfil",
+  "search_workflows": "Buscar flujos de trabajo...",
+  "filter_all": "Todos",
+  "filter_automation": "Automatización",
+  "filter_integration": "Integración",
+  "filter_finance": "Finanzas",
+  "filter_productivity": "Productividad"
 }
