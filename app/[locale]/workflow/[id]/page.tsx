@@ -123,7 +123,7 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
 
                 {/* Right Column: Sidebar */}
                 <div className="space-y-6">
-                    <Card className="p-6 sticky top-24 bg-white/60">
+                    <Card className="p-6 bg-white/60">
                         <div className="flex items-baseline justify-between mb-8">
                             <span className="text-secondary font-medium">Price</span>
                             <span className="text-4xl font-bold text-primary font-averia">
