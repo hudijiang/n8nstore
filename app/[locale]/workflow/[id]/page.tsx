@@ -1,6 +1,10 @@
 import Card from '@/components/ui/Card'
 import { Copy, Download } from 'lucide-react'
 import { notFound } from 'next/navigation'
+import Breadcrumbs from '@/components/Breadcrumbs'
+import RelatedWorkflows from '@/components/RelatedWorkflows'
+import AdSlot from '@/components/AdSlot'
+import type { Metadata } from 'next'
 
 async function getMessages(locale: string) {
     const mod = await import(`../../../../messages/${locale}.json`)
@@ -43,6 +47,37 @@ async function getWorkflowJSON(jsonUrl: string) {
     }
 }
 
+// Generate metadata for SEO
+export async function generateMetadata({ params }: { params: { id: string; locale: string } }): Promise<Metadata> {
+    const workflow = await getWorkflow(params.id, params.locale)
+
+    if (!workflow) {
+        return {
+            title: 'Workflow Not Found',
+        }
+    }
+
+    const title = `${workflow.title} - n8n Workflow Store`
+    const description = workflow.description || `Download ${workflow.title} n8n workflow template`
+
+    return {
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            images: workflow.thumbnail_url ? [workflow.thumbnail_url] : [],
+            type: 'website',
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title,
+            description,
+            images: workflow.thumbnail_url ? [workflow.thumbnail_url] : [],
+        },
+    }
+}
+
 export default async function WorkflowPage({ params }: { params: { id: string; locale: string } }) {
     const t = await getMessages(params.locale)
     const workflow = await getWorkflow(params.id, params.locale)
@@ -51,12 +86,24 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
         notFound()
     }
 
-    const workflowJSON = await getWorkflowJSON(workflow.jsonPath)
+    const workflowJSON = workflow.json_url ? await getWorkflowJSON(workflow.json_url) : null
+
+    // Get first category for breadcrumb
+    const firstCategory = workflow.categories?.[0]
 
     return (
         <div className="pb-20 space-y-6">
-            <div className="grid lg:grid-cols-3 gap-6">
-                {/* Left Column: Main Content */}
+            {/* Breadcrumbs */}
+            <Breadcrumbs
+                locale={params.locale}
+                items={[
+                    { label: t.nav_explore || 'Explore', href: `/${params.locale}/explore` },
+                    { label: workflow.title },
+                ]}
+            />
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                {/* Main Content */}
                 <div className="lg:col-span-2 space-y-6">
                     <Card className="p-0 overflow-hidden bg-white/60">
                         <div className="h-64 bg-gray-100 relative">
@@ -167,7 +214,24 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                             </pre>
                         </Card>
                     )}
+
+                    {/* Ad Slot - Sidebar */}
+                    <AdSlot size="square" className="mx-auto" />
                 </div>
+            </div>
+
+            {/* Related Workflows */}
+            <div className="mt-12">
+                <RelatedWorkflows
+                    workflowId={params.id}
+                    categorySlug={firstCategory?.slug}
+                    locale={params.locale}
+                />
+            </div>
+
+            {/* Bottom Ad Slot */}
+            <div className="flex justify-center mt-8">
+                <AdSlot size="leaderboard" />
             </div>
         </div>
     )

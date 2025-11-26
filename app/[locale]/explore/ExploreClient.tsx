@@ -5,6 +5,8 @@ import WorkflowCard from '@/components/WorkflowCard';
 import Card from '@/components/ui/Card';
 import WorkflowSearch from '@/components/WorkflowSearch';
 import CategoryFilter from '@/components/CategoryFilter';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import AdSlot from '@/components/AdSlot';
 import { Grid, List } from 'lucide-react';
 
 interface Workflow {
@@ -76,6 +78,14 @@ export default function ExploreClient({ locale, translations }: ExploreClientPro
 
     return (
         <div className="space-y-6 pb-20">
+            {/* Breadcrumbs */}
+            <Breadcrumbs
+                locale={locale}
+                items={[
+                    { label: '探索' },
+                ]}
+            />
+
             {/* Header */}
             <Card className="w-full p-8 bg-white/60">
                 <h1 className="text-4xl font-bold text-primary font-averia mb-2">
@@ -85,6 +95,11 @@ export default function ExploreClient({ locale, translations }: ExploreClientPro
                     浏览所有可用的 n8n 工作流模板
                 </p>
             </Card>
+
+            {/* Top Ad Slot */}
+            <div className="flex justify-center">
+                <AdSlot size="leaderboard" />
+            </div>
 
             {/* Filters and Controls */}
             <div className="space-y-4">
@@ -125,8 +140,8 @@ export default function ExploreClient({ locale, translations }: ExploreClientPro
                         <button
                             onClick={() => setViewMode('grid')}
                             className={`p-2 rounded-md transition-colors ${viewMode === 'grid'
-                                    ? 'bg-brand text-white'
-                                    : 'text-secondary hover:text-primary'
+                                ? 'bg-brand text-white'
+                                : 'text-secondary hover:text-primary'
                                 }`}
                         >
                             <Grid className="w-5 h-5" />
@@ -134,8 +149,8 @@ export default function ExploreClient({ locale, translations }: ExploreClientPro
                         <button
                             onClick={() => setViewMode('list')}
                             className={`p-2 rounded-md transition-colors ${viewMode === 'list'
-                                    ? 'bg-brand text-white'
-                                    : 'text-secondary hover:text-primary'
+                                ? 'bg-brand text-white'
+                                : 'text-secondary hover:text-primary'
                                 }`}
                         >
                             <List className="w-5 h-5" />
