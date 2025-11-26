@@ -1,0 +1,237 @@
+[
+    {
+        "id": "rss-to-telegram-1",
+        "title": "RSS Feed to Telegram Notifications",
+        "description": "Automatically monitor RSS feeds and send new articles to a Telegram channel. Perfect for staying updated with your favorite blogs and news sources.",
+        "author": "n8n-community",
+        "tags": [
+            "RSS",
+            "Telegram",
+            "Notifications",
+            "Automation"
+        ],
+        "nodes": [
+            "RSS Feed Read",
+            "Telegram",
+            "Schedule Trigger"
+        ],
+        "createdAt": "2024-01-15T10:00:00Z",
+        "updatedAt": "2024-11-20T15:30:00Z",
+        "views": 15420,
+        "price": 0,
+        "thumbnail": "https://picsum.photos/seed/rss-telegram/600/240",
+        "jsonPath": "/workflows/json/rss-to-telegram-1.json"
+    },
+    {
+        "id": "github-issue-notifier-2",
+        "title": "GitHub Issue Notifier",
+        "description": "Monitor new GitHub issues and send notifications to Slack. Keep your team informed about new bug reports and feature requests in real-time.",
+        "author": "devops-team",
+        "tags": [
+            "GitHub",
+            "Slack",
+            "Monitoring",
+            "DevOps"
+        ],
+        "nodes": [
+            "GitHub Trigger",
+            "Slack",
+            "Filter"
+        ],
+        "createdAt": "2024-02-10T14:20:00Z",
+        "updatedAt": "2024-11-22T09:15:00Z",
+        "views": 12350,
+        "price": 9.99,
+        "thumbnail": "https://picsum.photos/seed/github-slack/600/240",
+        "jsonPath": "/workflows/json/github-issue-notifier-2.json"
+    },
+    {
+        "id": "email-parser-sheets-3",
+        "title": "Email Parser to Google Sheets",
+        "description": "Parse incoming emails and automatically save structured data to Google Sheets. Great for processing form submissions, orders, and customer inquiries.",
+        "author": "productivity-pro",
+        "tags": [
+            "Email",
+            "Google Sheets",
+            "Parser",
+            "Productivity"
+        ],
+        "nodes": [
+            "Email Trigger (IMAP)",
+            "Extract from File",
+            "Google Sheets"
+        ],
+        "createdAt": "2024-03-05T11:45:00Z",
+        "updatedAt": "2024-11-18T16:00:00Z",
+        "views": 9870,
+        "price": 0,
+        "thumbnail": "https://picsum.photos/seed/email-sheets/600/240",
+        "jsonPath": "/workflows/json/email-parser-sheets-3.json"
+    },
+    {
+        "id": "twitter-content-scheduler-4",
+        "title": "Twitter Content Scheduler",
+        "description": "Schedule and publish tweets from a Google Sheet. Plan your social media content in advance and maintain a consistent posting schedule.",
+        "author": "social-media-guru",
+        "tags": [
+            "Twitter",
+            "Social Media",
+            "Scheduling",
+            "Marketing"
+        ],
+        "nodes": [
+            "Schedule Trigger",
+            "Google Sheets",
+            "Twitter"
+        ],
+        "createdAt": "2024-04-12T09:30:00Z",
+        "updatedAt": "2024-11-25T12:00:00Z",
+        "views": 8540,
+        "price": 14.99,
+        "thumbnail": "https://picsum.photos/seed/twitter-schedule/600/240",
+        "jsonPath": "/workflows/json/twitter-content-scheduler-4.json"
+    },
+    {
+        "id": "stripe-payment-tracker-5",
+        "title": "Stripe Payment Tracker",
+        "description": "Track Stripe payments and update your CRM automatically. Get real-time notifications for new payments and failed transactions.",
+        "author": "finance-automation",
+        "tags": [
+            "Stripe",
+            "Finance",
+            "CRM",
+            "Payments"
+        ],
+        "nodes": [
+            "Stripe Trigger",
+            "Airtable",
+            "Slack"
+        ],
+        "createdAt": "2024-05-20T13:15:00Z",
+        "updatedAt": "2024-11-23T10:45:00Z",
+        "views": 7230,
+        "price": 19.99,
+        "thumbnail": "https://picsum.photos/seed/stripe-crm/600/240",
+        "jsonPath": "/workflows/json/stripe-payment-tracker-5.json"
+    },
+    {
+        "id": "notion-task-sync-6",
+        "title": "Notion to Todoist Task Sync",
+        "description": "Synchronize tasks between Notion and Todoist. Keep your project management tools in sync automatically.",
+        "author": "productivity-hacker",
+        "tags": [
+            "Notion",
+            "Todoist",
+            "Productivity",
+            "Sync"
+        ],
+        "nodes": [
+            "Notion Trigger",
+            "Todoist",
+            "Filter",
+            "Set"
+        ],
+        "createdAt": "2024-06-08T15:00:00Z",
+        "updatedAt": "2024-11-24T14:20:00Z",
+        "views": 6890,
+        "price": 0,
+        "thumbnail": "https://picsum.photos/seed/notion-todoist/600/240",
+        "jsonPath": "/workflows/json/notion-task-sync-6.json"
+    },
+    {
+        "id": "website-monitor-7",
+        "title": "Website Uptime Monitor",
+        "description": "Monitor website availability and get instant alerts when your site goes down. Includes response time tracking and status code monitoring.",
+        "author": "devops-ninja",
+        "tags": [
+            "Monitoring",
+            "DevOps",
+            "Alerts",
+            "HTTP"
+        ],
+        "nodes": [
+            "Schedule Trigger",
+            "HTTP Request",
+            "IF",
+            "Telegram"
+        ],
+        "createdAt": "2024-07-14T10:30:00Z",
+        "updatedAt": "2024-11-21T11:00:00Z",
+        "views": 5670,
+        "price": 0,
+        "thumbnail": "https://picsum.photos/seed/uptime-monitor/600/240",
+        "jsonPath": "/workflows/json/website-monitor-7.json"
+    },
+    {
+        "id": "ai-content-generator-8",
+        "title": "AI Content Generator with OpenAI",
+        "description": "Generate blog posts, social media content, and marketing copy using OpenAI's GPT models. Automate your content creation workflow.",
+        "author": "ai-enthusiast",
+        "tags": [
+            "AI",
+            "OpenAI",
+            "Content",
+            "Marketing"
+        ],
+        "nodes": [
+            "Schedule Trigger",
+            "OpenAI",
+            "Google Docs",
+            "Slack"
+        ],
+        "createdAt": "2024-08-22T16:45:00Z",
+        "updatedAt": "2024-11-25T09:30:00Z",
+        "views": 11200,
+        "price": 24.99,
+        "thumbnail": "https://picsum.photos/seed/ai-content/600/240",
+        "jsonPath": "/workflows/json/ai-content-generator-8.json"
+    },
+    {
+        "id": "customer-feedback-analyzer-9",
+        "title": "Customer Feedback Analyzer",
+        "description": "Collect customer feedback from multiple sources, analyze sentiment, and create reports. Powered by AI sentiment analysis.",
+        "author": "customer-success",
+        "tags": [
+            "Customer Service",
+            "AI",
+            "Analytics",
+            "Feedback"
+        ],
+        "nodes": [
+            "Webhook",
+            "OpenAI",
+            "Google Sheets",
+            "Email Send"
+        ],
+        "createdAt": "2024-09-10T12:00:00Z",
+        "updatedAt": "2024-11-22T15:45:00Z",
+        "views": 4320,
+        "price": 29.99,
+        "thumbnail": "https://picsum.photos/seed/feedback-analyzer/600/240",
+        "jsonPath": "/workflows/json/customer-feedback-analyzer-9.json"
+    },
+    {
+        "id": "invoice-automation-10",
+        "title": "Automated Invoice Generator",
+        "description": "Generate and send invoices automatically when new orders are received. Integrates with Stripe, PayPal, and accounting software.",
+        "author": "finance-pro",
+        "tags": [
+            "Finance",
+            "Invoicing",
+            "Automation",
+            "Accounting"
+        ],
+        "nodes": [
+            "Webhook",
+            "PDF",
+            "Email Send",
+            "Google Drive"
+        ],
+        "createdAt": "2024-10-05T14:30:00Z",
+        "updatedAt": "2024-11-20T10:15:00Z",
+        "views": 3890,
+        "price": 34.99,
+        "thumbnail": "https://picsum.photos/seed/invoice-auto/600/240",
+        "jsonPath": "/workflows/json/invoice-automation-10.json"
+    }
+]

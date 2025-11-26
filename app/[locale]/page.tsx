@@ -1,5 +1,7 @@
 import WorkflowCard from '@/components/WorkflowCard'
 import Card from '@/components/ui/Card'
+import fs from 'fs'
+import path from 'path'
 
 const locales = ['en', 'ja', 'zh', 'de', 'fr', 'es']
 
@@ -11,13 +13,23 @@ async function getMessages(locale: string) {
   return mod.default as Record<string, string>
 }
 
+async function getWorkflows() {
+  try {
+    const filePath = path.join(process.cwd(), 'public/workflows/data/workflows.json')
+    const fileContent = fs.readFileSync(filePath, 'utf8')
+    return JSON.parse(fileContent)
+  } catch (error) {
+    console.error('Error loading workflows:', error)
+    return []
+  }
+}
+
 export default async function Page({ params }: { params: { locale: string } }) {
   const t = await getMessages(params.locale)
-  const workflows = [
-    { title: t.workflow_rss_title, price: 0, json: { name: 'rss_to_telegram' }, description: t.workflow_rss_desc, tags: ['RSS', 'Telegram', 'Notify'], thumbnailUrl: 'https://picsum.photos/seed/rss/600/240' },
-    { title: t.workflow_github_title, price: 9.9, json: { name: 'github_issue_notifier' }, description: t.workflow_github_desc, tags: ['GitHub', 'Alert', 'Issue'], thumbnailUrl: 'https://picsum.photos/seed/github/600/240' },
-    { title: t.workflow_email_title, price: 0, json: { name: 'email_parser_to_sheets' }, description: t.workflow_email_desc, tags: ['Email', 'Parser', 'Sheets'], thumbnailUrl: 'https://picsum.photos/seed/email/600/240' }
-  ]
+  const allWorkflows = await getWorkflows()
+
+  // Display first 6 workflows
+  const workflows = allWorkflows.slice(0, 6)
 
   return (
     <div className="space-y-6 pb-20">
@@ -51,9 +63,17 @@ export default async function Page({ params }: { params: { locale: string } }) {
 
       {/* Workflow Grid */}
       <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {workflows.map((w) => (
-          <div key={w.title} className="h-[400px]">
-            <WorkflowCard title={w.title} price={w.price} json={w.json} t={t} description={w.description} tags={w.tags} thumbnailUrl={w.thumbnailUrl} />
+        {workflows.map((w: any) => (
+          <div key={w.id} className="h-[400px]">
+            <WorkflowCard
+              title={w.title}
+              price={w.price}
+              json={{ name: w.id }}
+              t={t}
+              description={w.description}
+              tags={w.tags}
+              thumbnailUrl={w.thumbnail}
+            />
           </div>
         ))}
       </div>
