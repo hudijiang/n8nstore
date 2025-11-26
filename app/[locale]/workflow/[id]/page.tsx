@@ -121,51 +121,53 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                                     <span>{workflow.views} views</span>
                                 </div>
                             </div>
-                            <div className="p-6 space-y-6">
-                                <div>
-                                    <h2 className="text-2xl font-bold text-primary mb-4">{t.description || '描述'}</h2>
-                                    <p className="text-secondary leading-relaxed whitespace-pre-wrap">
-                                        {workflow.description}
-                                    </p>
-                                </div>
+                        </div>
 
-                                {workflow.categories && workflow.categories.length > 0 && (
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-primary mb-3">{t.categories || 'Categories'}</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {workflow.categories.map((category: any, index: number) => (
-                                                <span
-                                                    key={index}
-                                                    className="px-4 py-2 rounded-full bg-brand/10 text-brand font-medium"
-                                                >
-                                                    {category.icon} {category.name}
-                                                </span>
-                                            ))}
-                                        </div>
-                                    </div>
-                                )}
-
-                                {workflow.nodes && workflow.nodes.length > 0 && (
-                                    <div>
-                                        <h3 className="text-lg font-semibold text-primary mb-3">{t.nodes_used || 'Nodes Used'}</h3>
-                                        <div className="flex flex-wrap gap-2">
-                                            {workflow.nodes.slice(0, 10).map((node: string, index: number) => (
-                                                <span
-                                                    key={index}
-                                                    className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-mono"
-                                                >
-                                                    {node}
-                                                </span>
-                                            ))}
-                                            {workflow.nodes.length > 10 && (
-                                                <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs">
-                                                    +{workflow.nodes.length - 10} more
-                                                </span>
-                                            )}
-                                        </div>
-                                    </div>
-                                )}
+                        <div className="p-6 space-y-6">
+                            <div>
+                                <h2 className="text-2xl font-bold text-primary mb-4">{t.description || '描述'}</h2>
+                                <p className="text-secondary leading-relaxed whitespace-pre-wrap">
+                                    {workflow.description}
+                                </p>
                             </div>
+
+                            {workflow.categories && workflow.categories.length > 0 && (
+                                <div>
+                                    <h3 className="text-lg font-semibold text-primary mb-3">{t.categories || 'Categories'}</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {workflow.categories.map((category: any, index: number) => (
+                                            <span
+                                                key={index}
+                                                className="px-4 py-2 rounded-full bg-brand/10 text-brand font-medium"
+                                            >
+                                                {category.icon} {category.name}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {workflow.nodes && workflow.nodes.length > 0 && (
+                                <div>
+                                    <h3 className="text-lg font-semibold text-primary mb-3">{t.nodes_used || 'Nodes Used'}</h3>
+                                    <div className="flex flex-wrap gap-2">
+                                        {workflow.nodes.slice(0, 10).map((node: string, index: number) => (
+                                            <span
+                                                key={index}
+                                                className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-mono"
+                                            >
+                                                {node}
+                                            </span>
+                                        ))}
+                                        {workflow.nodes.length > 10 && (
+                                            <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs">
+                                                +{workflow.nodes.length - 10} more
+                                            </span>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
                     </Card>
                 </div>
 
