@@ -71,29 +71,36 @@ export default function HomeClient({ locale, translations }: HomeClientProps) {
                 </p>
             </Card>
 
-            {/* Search and Filters */}
-            <div className="space-y-4">
-                <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-                    <WorkflowSearch
-                        locale={locale}
-                        onSearch={setSearchQuery}
-                        placeholder={translations.search_placeholder || 'Search workflows...'}
-                    />
-
-                    <select
-                        value={sortBy}
-                        onChange={(e) => setSortBy(e.target.value)}
-                        className="px-4 py-2 rounded-full bg-white/60 border border-white/20 focus:outline-none focus:ring-2 focus:ring-brand/50"
-                    >
-                        <option value="views">{translations.sort_by_views || 'Most Viewed'}</option>
-                        <option value="created_at">{translations.sort_by_newest || 'Newest'}</option>
-                    </select>
-                </div>
-
+            {/* Category Filter */}
+            <div className="flex items-center justify-center">
                 <CategoryFilter
                     selectedCategory={selectedCategory}
                     onCategoryChange={setSelectedCategory}
                 />
+            </div>
+
+            {/* Search and Sort Controls */}
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+                {/* Search */}
+                <div className="w-full sm:w-auto sm:flex-1 max-w-md">
+                    <WorkflowSearch
+                        searchQuery={searchQuery}
+                        onSearchChange={setSearchQuery}
+                        placeholder={translations.search_placeholder || 'Search workflows...'}
+                    />
+                </div>
+
+                {/* Sort */}
+                <div className="w-full sm:w-auto">
+                    <select
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value as 'views' | 'created_at')}
+                        className="w-full px-4 py-2.5 rounded-lg bg-white/60 border border-gray-200 text-sm font-medium text-secondary focus:outline-none focus:ring-2 focus:ring-brand/50 hover:bg-white/80 transition-colors"
+                    >
+                        <option value="views">{translations.sort_by_views || 'Most Viewed'}</option>
+                        <option value="created_at">{translations.sort_by_newest || 'Latest'}</option>
+                    </select>
+                </div>
             </div>
 
             {/* Workflows Grid */}
@@ -110,15 +117,11 @@ export default function HomeClient({ locale, translations }: HomeClientProps) {
                         {[...Array(6)].map((_, i) => (
                             <div
                                 key={i}
-                                className="h-80 rounded-3xl bg-white/30 animate-pulse"
+                                className="h-96 bg-white/30 rounded-2xl animate-pulse"
                             />
                         ))}
                     </div>
-                ) : workflows.length === 0 ? (
-                    <Card className="p-8 text-center">
-                        <p className="text-secondary">{translations.no_workflows || 'No workflows found'}</p>
-                    </Card>
-                ) : (
+                ) : workflows.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {workflows.map((workflow) => (
                             <WorkflowCard
