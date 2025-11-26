@@ -18,29 +18,11 @@ export async function GET(request: NextRequest) {
     const supabase = createClient(supabaseUrl, supabaseKey);
 
     try {
-        // Build query
+        // Build query - simplified to avoid complex joins
         let query = supabase
             .from('workflows')
-            .select(`
-        *,
-        workflow_translations!inner(title, description),
-        workflow_categories(
-          categories(id, name, slug, icon)
-        ),
-        workflow_nodes(node_type, node_count)
-      `, { count: 'exact' })
-            .eq('published', true)
-            .eq('workflow_translations.locale', locale);
-
-        // Category filter
-        if (category) {
-            query = query.eq('workflow_categories.categories.slug', category);
-        }
-
-        // Search filter
-        if (search) {
-            query = query.textSearch('workflow_translations.fts', search);
-        }
+            .select('*', { count: 'exact' })
+            .eq('published', true);
 
         // Sorting
         if (sort === 'views') {
@@ -54,34 +36,77 @@ export async function GET(request: NextRequest) {
         const to = from + limit - 1;
         query = query.range(from, to);
 
-        const { data, error, count } = await query;
+        const { data: workflows, error, count } = await query;
 
         if (error) {
             console.error('Database error:', error);
             return NextResponse.json(
-                { error: 'Failed to fetch workflows' },
+                { error: 'Failed to fetch workflows', details: error.message },
                 { status: 500 }
             );
         }
 
-        // Transform data
-        const workflows = data?.map(workflow => ({
-            id: workflow.id,
-            title: workflow.workflow_translations[0]?.title || workflow.title,
-            description: workflow.workflow_translations[0]?.description || workflow.description,
-            author: workflow.author,
-            thumbnail: workflow.thumbnail_url,
-            jsonPath: workflow.json_url,
-            views: workflow.views,
-            price: workflow.price,
-            categories: workflow.workflow_categories?.map((wc: any) => wc.categories) || [],
-            nodes: workflow.workflow_nodes?.map((wn: any) => wn.node_type) || [],
-            createdAt: workflow.created_at,
-            updatedAt: workflow.updated_at,
-        })) || [];
+        // Fetch translations, categories, and nodes separately for each workflow
+        const enrichedWorkflows = await Promise.all(
+            (workflows || []).map(async (workflow) => {
+                // Get translation
+                const { data: translations } = await supabase
+                    .from('workflow_translations')
+                    .select('title, description')
+                    .eq('workflow_id', workflow.id)
+                    .eq('locale', locale)
+                    .limit(1);
+
+                // Get categories
+                const { data: workflowCategories } = await supabase
+                    .from('workflow_categories')
+                    .select('category_id, categories(id, name, slug, icon)')
+                    .eq('workflow_id', workflow.id);
+
+                // Get nodes
+                const { data: nodes } = await supabase
+                    .from('workflow_nodes')
+                    .select('node_type')
+                    .eq('workflow_id', workflow.id);
+
+                const translation = translations?.[0];
+
+                return {
+                    id: workflow.id,
+                    title: translation?.title || workflow.title,
+                    description: translation?.description || workflow.description,
+                    author: workflow.author,
+                    thumbnail: workflow.thumbnail_url,
+                    jsonPath: workflow.json_url,
+                    views: workflow.views,
+                    price: workflow.price,
+                    categories: workflowCategories?.map((wc: any) => wc.categories).filter(Boolean) || [],
+                    nodes: nodes?.map((n: any) => n.node_type) || [],
+                    createdAt: workflow.created_at,
+                    updatedAt: workflow.updated_at,
+                };
+            })
+        );
+
+        // Apply search filter in memory if needed
+        let filteredWorkflows = enrichedWorkflows;
+        if (search) {
+            const searchLower = search.toLowerCase();
+            filteredWorkflows = enrichedWorkflows.filter(w =>
+                w.title.toLowerCase().includes(searchLower) ||
+                w.description?.toLowerCase().includes(searchLower)
+            );
+        }
+
+        // Apply category filter in memory if needed
+        if (category) {
+            filteredWorkflows = filteredWorkflows.filter(w =>
+                w.categories.some((c: any) => c.slug === category)
+            );
+        }
 
         return NextResponse.json({
-            workflows,
+            workflows: filteredWorkflows,
             pagination: {
                 page,
                 limit,

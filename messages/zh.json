@@ -40,6 +40,15 @@
   "nav_explore": "探索",
   "nav_orders": "我的订单",
   "nav_profile": "个人资料",
+  "browse_by_category": "按分类浏览",
+  "category_ai": "AI 与自动化",
+  "category_automation": "自动化",
+  "category_integration": "集成",
+  "category_productivity": "生产力",
+  "sort_by_views": "最多浏览",
+  "sort_by_newest": "最新",
+  "category_workflows": "工作流",
+  "no_workflows": "未找到工作流",
   "search_workflows": "搜索工作流...",
   "filter_all": "全部",
   "filter_automation": "自动化",
@@ -47,3 +56,4 @@
   "filter_finance": "金融",
   "filter_productivity": "生产力"
 }
+```
