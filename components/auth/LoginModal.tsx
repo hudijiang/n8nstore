@@ -36,8 +36,18 @@ export default function LoginModal({ isOpen, onClose, locale }: LoginModalProps)
     };
 
     return (
-        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-            <Card className="w-full max-w-md p-8 relative bg-white">
+        <div
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+            onClick={onClose}
+        >
+            {/* Backdrop */}
+            <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
+
+            {/* Modal Content */}
+            <Card
+                className="w-full max-w-md p-8 relative bg-white z-10"
+                onClick={(e) => e.stopPropagation()}
+            >
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
