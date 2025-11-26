@@ -57,5 +57,9 @@
   "filter_automation": "自动化",
   "filter_integration": "集成",
   "filter_finance": "金融",
-  "filter_productivity": "生产力"
+  "filter_productivity": "生产力",
+  "price": "价格",
+  "views": "浏览量",
+  "categories": "分类",
+  "nodes_used": "使用的节点"
 }

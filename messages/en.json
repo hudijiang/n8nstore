@@ -59,5 +59,9 @@
   "filter_automation": "Automation",
   "filter_integration": "Integration",
   "filter_finance": "Finance",
-  "filter_productivity": "Productivity"
+  "filter_productivity": "Productivity",
+  "price": "Price",
+  "views": "Views",
+  "categories": "Categories",
+  "nodes_used": "Nodes Used"
 }
