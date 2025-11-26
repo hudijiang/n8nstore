@@ -8,6 +8,7 @@ interface Category {
     slug: string;
     icon: string;
     count: number;
+    workflow_count: number;
 }
 
 interface CategoryFilterProps {
@@ -25,7 +26,11 @@ export default function CategoryFilter({ selectedCategory, onCategoryChange }: C
                 const response = await fetch('/api/categories');
                 if (response.ok) {
                     const data = await response.json();
-                    setCategories(data);
+                    // Sort by workflow count and take top 3
+                    const topCategories = data
+                        .sort((a: any, b: any) => (b.workflow_count || 0) - (a.workflow_count || 0))
+                        .slice(0, 3);
+                    setCategories(topCategories);
                 }
             } catch (error) {
                 console.error('Error fetching categories:', error);
