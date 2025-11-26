@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import Card from '@/components/ui/Card'
 import Tag from './Tag'
 import { Download, Copy, Check, ExternalLink } from 'lucide-react'
@@ -91,7 +92,7 @@ export default function WorkflowCard({ id, title, description, author, price, th
                   key={index}
                   href={`/${locale}?category=${encodeURIComponent(tag)}` as any}
                   className="px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-medium hover:bg-brand/20 transition-colors"
-                  onClick={(e) => e.stopPropagation()}
+                  onClick={(e: React.MouseEvent) => e.stopPropagation()}
                 >
                   {tag}
                 </Link>
