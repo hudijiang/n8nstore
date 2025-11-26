@@ -74,14 +74,7 @@ export default function WorkflowCard({ id, title, description, author, price, th
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
 
-          <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end">
-            <div className="flex gap-2">
-              {tags.slice(0, 2).map(tag => (
-                <span key={tag} className="px-2 py-1 rounded-lg bg-white/20 backdrop-blur-md text-white text-xs font-medium border border-white/10">
-                  {tag}
-                </span>
-              ))}
-            </div>
+          <div className="absolute bottom-4 left-4 right-4 flex justify-end items-end">
             <div className="bg-white/90 backdrop-blur text-primary px-3 py-1 rounded-full text-sm font-bold shadow-sm">
               {price === 0 ? (t.free || 'Free') : `$${price}`}
             </div>
@@ -90,6 +83,26 @@ export default function WorkflowCard({ id, title, description, author, price, th
 
         {/* Content Section */}
         <div className="p-6 flex flex-col flex-1">
+          {/* Tags */}
+          {tags && tags.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-2">
+              {tags.slice(0, 3).map((tag, index) => (
+                <Link
+                  key={index}
+                  href={`/${locale}?category=${encodeURIComponent(tag)}` as any}
+                  className="px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-medium hover:bg-brand/20 transition-colors"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {tag}
+                </Link>
+              ))}
+              {tags.length > 3 && (
+                <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs">
+                  +{tags.length - 3}
+                </span>
+              )}
+            </div>
+          )}
           <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1">{title}</h3>
           <p className="text-secondary text-sm leading-relaxed line-clamp-2 mb-6 flex-1">
             {description}
