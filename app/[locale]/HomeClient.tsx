@@ -71,18 +71,18 @@ export default function HomeClient({ locale, translations }: HomeClientProps) {
                 </p>
             </Card>
 
-            {/* Category Filter */}
-            <div className="flex items-center justify-center">
-                <CategoryFilter
-                    selectedCategory={selectedCategory}
-                    onCategoryChange={setSelectedCategory}
-                />
-            </div>
+            {/* Category Filter, Search and Sort in same row */}
+            <div className="flex flex-col lg:flex-row gap-4 items-center">
+                {/* Category Filter */}
+                <div className="w-full lg:w-auto">
+                    <CategoryFilter
+                        selectedCategory={selectedCategory}
+                        onCategoryChange={setSelectedCategory}
+                    />
+                </div>
 
-            {/* Search and Sort Controls */}
-            <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
                 {/* Search */}
-                <div className="w-full sm:w-auto sm:flex-1 max-w-md">
+                <div className="w-full lg:flex-1 max-w-md">
                     <WorkflowSearch
                         searchQuery={searchQuery}
                         onSearchChange={setSearchQuery}
@@ -91,7 +91,7 @@ export default function HomeClient({ locale, translations }: HomeClientProps) {
                 </div>
 
                 {/* Sort */}
-                <div className="w-full sm:w-auto">
+                <div className="w-full lg:w-auto">
                     <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value as 'views' | 'created_at')}
