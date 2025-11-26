@@ -1,237 +1,2741 @@
 [
-    {
-        "id": "rss-to-telegram-1",
-        "title": "RSS Feed to Telegram Notifications",
-        "description": "Automatically monitor RSS feeds and send new articles to a Telegram channel. Perfect for staying updated with your favorite blogs and news sources.",
-        "author": "n8n-community",
-        "tags": [
-            "RSS",
-            "Telegram",
-            "Notifications",
-            "Automation"
-        ],
-        "nodes": [
-            "RSS Feed Read",
-            "Telegram",
-            "Schedule Trigger"
-        ],
-        "createdAt": "2024-01-15T10:00:00Z",
-        "updatedAt": "2024-11-20T15:30:00Z",
-        "views": 15420,
-        "price": 0,
-        "thumbnail": "https://picsum.photos/seed/rss-telegram/600/240",
-        "jsonPath": "/workflows/json/rss-to-telegram-1.json"
-    },
-    {
-        "id": "github-issue-notifier-2",
-        "title": "GitHub Issue Notifier",
-        "description": "Monitor new GitHub issues and send notifications to Slack. Keep your team informed about new bug reports and feature requests in real-time.",
-        "author": "devops-team",
-        "tags": [
-            "GitHub",
-            "Slack",
-            "Monitoring",
-            "DevOps"
-        ],
-        "nodes": [
-            "GitHub Trigger",
-            "Slack",
-            "Filter"
-        ],
-        "createdAt": "2024-02-10T14:20:00Z",
-        "updatedAt": "2024-11-22T09:15:00Z",
-        "views": 12350,
-        "price": 9.99,
-        "thumbnail": "https://picsum.photos/seed/github-slack/600/240",
-        "jsonPath": "/workflows/json/github-issue-notifier-2.json"
-    },
-    {
-        "id": "email-parser-sheets-3",
-        "title": "Email Parser to Google Sheets",
-        "description": "Parse incoming emails and automatically save structured data to Google Sheets. Great for processing form submissions, orders, and customer inquiries.",
-        "author": "productivity-pro",
-        "tags": [
-            "Email",
-            "Google Sheets",
-            "Parser",
-            "Productivity"
-        ],
-        "nodes": [
-            "Email Trigger (IMAP)",
-            "Extract from File",
-            "Google Sheets"
-        ],
-        "createdAt": "2024-03-05T11:45:00Z",
-        "updatedAt": "2024-11-18T16:00:00Z",
-        "views": 9870,
-        "price": 0,
-        "thumbnail": "https://picsum.photos/seed/email-sheets/600/240",
-        "jsonPath": "/workflows/json/email-parser-sheets-3.json"
-    },
-    {
-        "id": "twitter-content-scheduler-4",
-        "title": "Twitter Content Scheduler",
-        "description": "Schedule and publish tweets from a Google Sheet. Plan your social media content in advance and maintain a consistent posting schedule.",
-        "author": "social-media-guru",
-        "tags": [
-            "Twitter",
-            "Social Media",
-            "Scheduling",
-            "Marketing"
-        ],
-        "nodes": [
-            "Schedule Trigger",
-            "Google Sheets",
-            "Twitter"
-        ],
-        "createdAt": "2024-04-12T09:30:00Z",
-        "updatedAt": "2024-11-25T12:00:00Z",
-        "views": 8540,
-        "price": 14.99,
-        "thumbnail": "https://picsum.photos/seed/twitter-schedule/600/240",
-        "jsonPath": "/workflows/json/twitter-content-scheduler-4.json"
-    },
-    {
-        "id": "stripe-payment-tracker-5",
-        "title": "Stripe Payment Tracker",
-        "description": "Track Stripe payments and update your CRM automatically. Get real-time notifications for new payments and failed transactions.",
-        "author": "finance-automation",
-        "tags": [
-            "Stripe",
-            "Finance",
-            "CRM",
-            "Payments"
-        ],
-        "nodes": [
-            "Stripe Trigger",
-            "Airtable",
-            "Slack"
-        ],
-        "createdAt": "2024-05-20T13:15:00Z",
-        "updatedAt": "2024-11-23T10:45:00Z",
-        "views": 7230,
-        "price": 19.99,
-        "thumbnail": "https://picsum.photos/seed/stripe-crm/600/240",
-        "jsonPath": "/workflows/json/stripe-payment-tracker-5.json"
-    },
-    {
-        "id": "notion-task-sync-6",
-        "title": "Notion to Todoist Task Sync",
-        "description": "Synchronize tasks between Notion and Todoist. Keep your project management tools in sync automatically.",
-        "author": "productivity-hacker",
-        "tags": [
-            "Notion",
-            "Todoist",
-            "Productivity",
-            "Sync"
-        ],
-        "nodes": [
-            "Notion Trigger",
-            "Todoist",
-            "Filter",
-            "Set"
-        ],
-        "createdAt": "2024-06-08T15:00:00Z",
-        "updatedAt": "2024-11-24T14:20:00Z",
-        "views": 6890,
-        "price": 0,
-        "thumbnail": "https://picsum.photos/seed/notion-todoist/600/240",
-        "jsonPath": "/workflows/json/notion-task-sync-6.json"
-    },
-    {
-        "id": "website-monitor-7",
-        "title": "Website Uptime Monitor",
-        "description": "Monitor website availability and get instant alerts when your site goes down. Includes response time tracking and status code monitoring.",
-        "author": "devops-ninja",
-        "tags": [
-            "Monitoring",
-            "DevOps",
-            "Alerts",
-            "HTTP"
-        ],
-        "nodes": [
-            "Schedule Trigger",
-            "HTTP Request",
-            "IF",
-            "Telegram"
-        ],
-        "createdAt": "2024-07-14T10:30:00Z",
-        "updatedAt": "2024-11-21T11:00:00Z",
-        "views": 5670,
-        "price": 0,
-        "thumbnail": "https://picsum.photos/seed/uptime-monitor/600/240",
-        "jsonPath": "/workflows/json/website-monitor-7.json"
-    },
-    {
-        "id": "ai-content-generator-8",
-        "title": "AI Content Generator with OpenAI",
-        "description": "Generate blog posts, social media content, and marketing copy using OpenAI's GPT models. Automate your content creation workflow.",
-        "author": "ai-enthusiast",
-        "tags": [
-            "AI",
-            "OpenAI",
-            "Content",
-            "Marketing"
-        ],
-        "nodes": [
-            "Schedule Trigger",
-            "OpenAI",
-            "Google Docs",
-            "Slack"
-        ],
-        "createdAt": "2024-08-22T16:45:00Z",
-        "updatedAt": "2024-11-25T09:30:00Z",
-        "views": 11200,
-        "price": 24.99,
-        "thumbnail": "https://picsum.photos/seed/ai-content/600/240",
-        "jsonPath": "/workflows/json/ai-content-generator-8.json"
-    },
-    {
-        "id": "customer-feedback-analyzer-9",
-        "title": "Customer Feedback Analyzer",
-        "description": "Collect customer feedback from multiple sources, analyze sentiment, and create reports. Powered by AI sentiment analysis.",
-        "author": "customer-success",
-        "tags": [
-            "Customer Service",
-            "AI",
-            "Analytics",
-            "Feedback"
-        ],
-        "nodes": [
-            "Webhook",
-            "OpenAI",
-            "Google Sheets",
-            "Email Send"
-        ],
-        "createdAt": "2024-09-10T12:00:00Z",
-        "updatedAt": "2024-11-22T15:45:00Z",
-        "views": 4320,
-        "price": 29.99,
-        "thumbnail": "https://picsum.photos/seed/feedback-analyzer/600/240",
-        "jsonPath": "/workflows/json/customer-feedback-analyzer-9.json"
-    },
-    {
-        "id": "invoice-automation-10",
-        "title": "Automated Invoice Generator",
-        "description": "Generate and send invoices automatically when new orders are received. Integrates with Stripe, PayPal, and accounting software.",
-        "author": "finance-pro",
-        "tags": [
-            "Finance",
-            "Invoicing",
-            "Automation",
-            "Accounting"
-        ],
-        "nodes": [
-            "Webhook",
-            "PDF",
-            "Email Send",
-            "Google Drive"
-        ],
-        "createdAt": "2024-10-05T14:30:00Z",
-        "updatedAt": "2024-11-20T10:15:00Z",
-        "views": 3890,
-        "price": 34.99,
-        "thumbnail": "https://picsum.photos/seed/invoice-auto/600/240",
-        "jsonPath": "/workflows/json/invoice-automation-10.json"
-    }
+  {
+    "id": "4448",
+    "title": "AI Client Onboarding Agent: Auto Welcome Email Generator",
+    "description": "This workflow, **AI Client Onboarding Agent: Auto Welcome Email Generator**, automates the onboarding process for new clients by generating and sending a personalized welcome email with a tailored onb",
+    "author": "yaron-nofluff",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "noOp",
+      "gmail",
+      "start",
+      "stickyNote",
+      "errorTrigger",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "googleSheetsTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:16.966Z",
+    "updatedAt": "2025-11-26T02:56:16.967Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4448.webp",
+    "jsonPath": "/workflows/json/4448.json"
+  },
+  {
+    "id": "2653",
+    "title": "AI Data Analyst Agent for Spreadsheets with NocoDB",
+    "description": "This workflow, titled **\"AI Data Analyst Agent for Spreadsheets with NocoDB,\"** is designed to convert spreadsheet data into an AI-powered, interactive knowledge base. It enables users to ask natural ",
+    "author": "derekcheungsa",
+    "tags": [
+      "Engineering",
+      "DevOps",
+      "Product",
+      "AI",
+      "IT Ops"
+    ],
+    "nodes": [
+      "set",
+      "nocoDbTool",
+      "stickyNote",
+      "httpRequest",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:16.972Z",
+    "updatedAt": "2025-11-26T02:56:16.972Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2653.webp",
+    "jsonPath": "/workflows/json/2653.json"
+  },
+  {
+    "id": "6288",
+    "title": "AI Email Support System: Gmail, Gemini, GPT-4, Slack & Google Sheets Workflow",
+    "description": "This workflow automates AI-powered customer support via email by integrating Gmail, Google Gemini and OpenAI GPT-4 language models, Slack, and Google Sheets. It is designed for email-based customer in",
+    "author": "dae221",
+    "tags": [
+      "Ticket Management",
+      "AI RAG"
+    ],
+    "nodes": [
+      "set",
+      "gmail",
+      "slack",
+      "stickyNote",
+      "googleDrive",
+      "gmailTrigger",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.agent",
+      "googleDriveTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.textClassifier",
+      "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:16.976Z",
+    "updatedAt": "2025-11-26T02:56:16.976Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/6288.webp",
+    "jsonPath": "/workflows/json/6288.json"
+  },
+  {
+    "id": "8093",
+    "title": "Audit student degree progress in Google Sheets using OpenAI",
+    "description": "This workflow automates auditing senior students’ degree progress using data stored in Google Sheets and AI-powered analysis via OpenAI. It reads student academic records, compares completed courses a",
+    "author": "rbreen",
+    "tags": [],
+    "nodes": [
+      "stickyNote",
+      "googleSheets",
+      "manualTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:16.979Z",
+    "updatedAt": "2025-11-26T02:56:16.979Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8093.webp",
+    "jsonPath": "/workflows/json/8093.json"
+  },
+  {
+    "id": "4049",
+    "title": "Automate AI Image Generation & Telegram Delivery with Google Drive and Sheets",
+    "description": "This workflow automates AI-based image generation triggered by Telegram messages and delivers the generated images back to Telegram while logging metadata in Google Drive and Google Sheets. It is desi",
+    "author": "dae221",
+    "tags": [
+      "Design",
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "telegram",
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "googleSheets",
+      "convertToFile",
+      "@n8n/n8n-nodes-langchain.agent",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:16.982Z",
+    "updatedAt": "2025-11-26T02:56:16.982Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4049.webp",
+    "jsonPath": "/workflows/json/4049.json"
+  },
+  {
+    "id": "5221",
+    "title": "Automate Research Paper Collection with Bright Data & n8n",
+    "description": "This workflow automates the collection of research papers from Google Scholar based on a user-defined topic, utilizing Bright Data’s proxy API to safely scrape web content, and then storing structured",
+    "author": "yaron-nofluff",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "code",
+      "html",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "manualTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:16.985Z",
+    "updatedAt": "2025-11-26T02:56:16.985Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5221.webp",
+    "jsonPath": "/workflows/json/5221.json"
+  },
+  {
+    "id": "3342",
+    "title": "Automate Sales for Digital Products & SaaS with AI (GPT-4o)",
+    "description": "This workflow automates sales outreach for digital products and SaaS using AI-powered prospecting, email discovery, and personalized email generation. It targets businesses by searching Google Maps fo",
+    "author": "b4dr",
+    "tags": [
+      "Sales",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "noOp",
+      "wait",
+      "gmail",
+      "filter",
+      "splitOut",
+      "aggregate",
+      "stickyNote",
+      "httpRequest",
+      "manualTrigger",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "removeDuplicates",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:16.988Z",
+    "updatedAt": "2025-11-26T02:56:16.988Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3342.webp",
+    "jsonPath": "/workflows/json/3342.json"
+  },
+  {
+    "id": "5222",
+    "title": "Automated Event Discovery with Bright Data & n8n",
+    "description": "This workflow, titled **Automated Event Discovery with Bright Data & n8n**, is designed to automatically scrape upcoming technology-related events from Eventbrite, process the raw HTML data into struc",
+    "author": "yaron-nofluff",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "code",
+      "html",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "scheduleTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:16.990Z",
+    "updatedAt": "2025-11-26T02:56:16.990Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5222.webp",
+    "jsonPath": "/workflows/json/5222.json"
+  },
+  {
+    "id": "4620",
+    "title": "Automated Google Drive to Facebook Ads: One-Click Video Marketing Workflow",
+    "description": "This workflow automates the process of video marketing by integrating Google Drive and Facebook Ads platforms. It is designed to fetch video files stored in Google Drive, download them, upload these v",
+    "author": "yaron-nofluff",
+    "tags": [
+      "Marketing"
+    ],
+    "nodes": [
+      "function",
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "manualTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:16.997Z",
+    "updatedAt": "2025-11-26T02:56:16.997Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4620.webp",
+    "jsonPath": "/workflows/json/4620.json"
+  },
+  {
+    "id": "4731",
+    "title": "Automated Investor Intelligence: CrunchBase to Google Sheets Data Harvester",
+    "description": "This workflow, titled **Automated Investor Intelligence: CrunchBase to Google Sheets Data Harvester**, is designed to **automatically extract, process, and store investor data from Crunchbase into a G",
+    "author": "yaron-nofluff",
+    "tags": [
+      "Finance",
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "code",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "scheduleTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.001Z",
+    "updatedAt": "2025-11-26T02:56:17.001Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4731.webp",
+    "jsonPath": "/workflows/json/4731.json"
+  },
+  {
+    "id": "3941",
+    "title": "Build & Sell AI Automations and Agents",
+    "description": "This workflow is designed as a comprehensive AI automation system that builds, processes, and sells AI-driven video content based on user input via Telegram. It incorporates ideation, script generatio",
+    "author": "nickyai",
+    "tags": [
+      "Other",
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "wait",
+      "merge",
+      "youTube",
+      "splitOut",
+      "telegram",
+      "aggregate",
+      "stickyNote",
+      "httpRequest",
+      "stopAndError",
+      "convertToFile",
+      "@n8n/n8n-nodes-langchain.agent",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.004Z",
+    "updatedAt": "2025-11-26T02:56:17.004Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3941.webp",
+    "jsonPath": "/workflows/json/3941.json"
+  },
+  {
+    "id": "3151",
+    "title": "Build an AI-Powered Tech Radar Advisor with SQL DB, RAG, and Routing Agents",
+    "description": "This workflow, titled **\"Build an AI-Powered Tech Radar Advisor with SQL DB, RAG, and Routing Agents\"**, is designed to create an AI-driven platform that helps organizations analyze and interact with ",
+    "author": "seanlon",
+    "tags": [
+      "Engineering",
+      "Product",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "cron",
+      "mySql",
+      "webhook",
+      "mySqlTool",
+      "googleDocs",
+      "stickyNote",
+      "googleDrive",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.agent",
+      "executeWorkflow",
+      "respondToWebhook",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "googleDriveTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatAnthropic",
+      "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "@n8n/n8n-nodes-langchain.embeddingsGoogleGemini",
+      "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:17.009Z",
+    "updatedAt": "2025-11-26T02:56:17.009Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3151.webp",
+    "jsonPath": "/workflows/json/3151.json"
+  },
+  {
+    "id": "3002",
+    "title": "Dynamically Run SuiteQL Queries in NetSuite via HTTP Webhook in n8n",
+    "description": "This workflow enables dynamic execution of SuiteQL queries in NetSuite triggered via an HTTP webhook in n8n. It is designed for self-hosted n8n instances that support the NetSuite community node, leve",
+    "author": "dataants",
+    "tags": [
+      "Engineering"
+    ],
+    "nodes": [
+      "webhook",
+      "n8n-nodes-netsuite.netsuite",
+      "manualTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.011Z",
+    "updatedAt": "2025-11-26T02:56:17.011Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3002.webp",
+    "jsonPath": "/workflows/json/3002.json"
+  },
+  {
+    "id": "4361",
+    "title": "Extract Details from Receipts via Telegram with Tesseract and Llama",
+    "description": "This workflow automates the extraction of detailed expense information from receipts sent via Telegram messages, either as images or text. It leverages image processing (Tesseract OCR) and AI language",
+    "author": "khmuhtadin",
+    "tags": [
+      "Finance",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "telegram",
+      "stickyNote",
+      "httpRequest",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "n8n-nodes-tesseractjs.tesseractNode",
+      "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.016Z",
+    "updatedAt": "2025-11-26T02:56:17.016Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4361.webp",
+    "jsonPath": "/workflows/json/4361.json"
+  },
+  {
+    "id": "4760",
+    "title": "Gmail Customer Support Auto-Responder with Ollama LLM and Pinecone RAG",
+    "description": "This workflow automates customer support email responses by integrating Gmail with advanced AI capabilities. Upon receiving an email in Gmail, it classifies the content, enriches context via a retriev",
+    "author": "aashitsharma",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "gmail",
+      "stickyNote",
+      "gmailTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmOllama",
+      "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "@n8n/n8n-nodes-langchain.textClassifier",
+      "@n8n/n8n-nodes-langchain.embeddingsOllama",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.vectorStorePinecone"
+    ],
+    "createdAt": "2025-11-26T02:56:17.018Z",
+    "updatedAt": "2025-11-26T02:56:17.018Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4760.webp",
+    "jsonPath": "/workflows/json/4760.json"
+  },
+  {
+    "id": "3605",
+    "title": "Gmail MCP Server – Your All‑in‑One AI Email Toolkit",
+    "description": "This workflow, **Gmail MCP Server – Your All‑in‑One AI Email Toolkit**, exposes the full Gmail API as a single Server-Sent Events (SSE) \"tool server\" endpoint designed for AI agents such as LangChain ",
+    "author": "aspereo",
+    "tags": [
+      "Building Blocks",
+      "AI"
+    ],
+    "nodes": [
+      "gmailTool",
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.022Z",
+    "updatedAt": "2025-11-26T02:56:17.022Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3605.webp",
+    "jsonPath": "/workflows/json/3605.json"
+  },
+  {
+    "id": "4807",
+    "title": "Smart Email Responder Workflow using AI",
+    "description": "This workflow, titled **Smart Email Auto-Responder**, automates intelligent email replies based on the content and context of incoming Gmail messages. It is designed primarily for handling emails with",
+    "author": "ankur",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "gmail",
+      "emailSend",
+      "gmailTrigger",
+      "googleCalendar",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.textClassifier",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.025Z",
+    "updatedAt": "2025-11-26T02:56:17.025Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4807.webp",
+    "jsonPath": "/workflows/json/4807.json"
+  },
+  {
+    "id": "3350",
+    "title": "Telegram AI Bot-to-Human Handoff for Sales Calls",
+    "description": "This workflow implements a Telegram AI bot designed for sales call handling with a bot-to-human handoff mechanism using a human-in-the-loop approach. It manages user interactions through a finite-stat",
+    "author": "jimleuk",
+    "tags": [
+      "Sales",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "redis",
+      "switch",
+      "telegram",
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "executeWorkflow",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.memoryManager",
+      "@n8n/n8n-nodes-langchain.memoryRedisChat",
+      "@n8n/n8n-nodes-langchain.informationExtractor"
+    ],
+    "createdAt": "2025-11-26T02:56:17.028Z",
+    "updatedAt": "2025-11-26T02:56:17.028Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3350.webp",
+    "jsonPath": "/workflows/json/3350.json"
+  },
+  {
+    "id": "7616",
+    "title": "Trello to Slack Notification Trigger: Task-Card Move Alerts",
+    "description": "This workflow automates notifications in Slack when a Trello card (task) is moved from one list to another within a specified Trello board. It is designed for teams using Trello to manage tasks, enabl",
+    "author": "rbreen",
+    "tags": [],
+    "nodes": [
+      "set",
+      "slack",
+      "stickyNote",
+      "httpRequest",
+      "manualTrigger",
+      "trelloTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.031Z",
+    "updatedAt": "2025-11-26T02:56:17.031Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7616.webp",
+    "jsonPath": "/workflows/json/7616.json"
+  },
+  {
+    "id": "3439",
+    "title": "Validate Seatable Webhooks with HMAC SHA256 Authentication",
+    "description": "This workflow is designed to **securely validate incoming Seatable webhook requests** by verifying their authenticity using HMAC SHA256 signature validation. It ensures that only legitimate requests f",
+    "author": "vquie",
+    "tags": [
+      "Engineering"
+    ],
+    "nodes": [
+      "if",
+      "noOp",
+      "crypto",
+      "webhook",
+      "stickyNote",
+      "respondToWebhook"
+    ],
+    "createdAt": "2025-11-26T02:56:17.033Z",
+    "updatedAt": "2025-11-26T02:56:17.033Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3439.webp",
+    "jsonPath": "/workflows/json/3439.json"
+  },
+  {
+    "id": "2946",
+    "title": "#️⃣Nostr #damus AI Powered Reporting + Gmail + Telegram",
+    "description": "This workflow automates the collection, analysis, and reporting of Nostr social network threads tagged with the hashtag `#damus`. It leverages the n8n Community Node for Nostr to read relevant threads",
+    "author": "joe",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "gmail",
+      "merge",
+      "markdown",
+      "telegram",
+      "aggregate",
+      "stickyNote",
+      "manualTrigger",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "n8n-nodes-nostrobots.nostrobotsread",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.036Z",
+    "updatedAt": "2025-11-26T02:56:17.036Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2946.webp",
+    "jsonPath": "/workflows/json/2946.json"
+  },
+  {
+    "id": "4388",
+    "title": "-Powered Knowledge Base with Google Docs, Discord & GPT-4o-mini",
+    "description": "This workflow implements a **Powered Knowledge Base integrating Google Docs, Discord, and GPT-4o-mini** to manage and leverage long-term memories and AI-assisted responses. It is designed for use case",
+    "author": "cfomodz",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "switch",
+      "googleDocs",
+      "discordTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.039Z",
+    "updatedAt": "2025-11-26T02:56:17.039Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4388.webp",
+    "jsonPath": "/workflows/json/4388.json"
+  },
+  {
+    "id": "6151",
+    "title": "10X E-commerce Sales AI Product Photography That Makes your product look Premium",
+    "description": "This n8n workflow automates enhancing e-commerce product images by generating premium-quality, professional backgrounds using AI-powered services. The main target use case is online retailers or marke",
+    "author": "arre",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.041Z",
+    "updatedAt": "2025-11-26T02:56:17.041Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/6151.webp",
+    "jsonPath": "/workflows/json/6151.json"
+  },
+  {
+    "id": "2814",
+    "title": "2-way Sync Google Contacts and Notion",
+    "description": "This workflow provides a **two-way synchronization** between Google Contacts and a Notion database, ensuring that contact information is consistently mirrored and updated on both platforms. It support",
+    "author": "solomon",
+    "tags": [
+      "Other"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "merge",
+      "filter",
+      "notion",
+      "splitOut",
+      "stickyNote",
+      "httpRequest",
+      "manualTrigger",
+      "notionTrigger",
+      "googleContacts",
+      "scheduleTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.044Z",
+    "updatedAt": "2025-11-26T02:56:17.044Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2814.webp",
+    "jsonPath": "/workflows/json/2814.json"
+  },
+  {
+    "id": "3628",
+    "title": "3D Figurine Orthographic Views with Midjourney and GPT-4o-image API",
+    "description": "This workflow automates the generation of orthographic views (front, side, back) of 3D figurines by leveraging AI image generation and processing APIs. It targets 3D designers, e-commerce operators, a",
+    "author": "piapi",
+    "tags": [
+      "Design",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "wait",
+      "httpRequest",
+      "manualTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.048Z",
+    "updatedAt": "2025-11-26T02:56:17.048Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3628.webp",
+    "jsonPath": "/workflows/json/3628.json"
+  },
+  {
+    "id": "4987",
+    "title": "3D Product Video Generator from 2D Image for E-Commerce Stores",
+    "description": "This workflow automates the generation of a 3D product video from a 2D product image submitted via a form, targeted at e-commerce store owners who want professional product videos to enhance their mar",
+    "author": "infyom",
+    "tags": [
+      "Design",
+      "Marketing"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "wait",
+      "gmail",
+      "stickyNote",
+      "formTrigger",
+      "googleDrive",
+      "httpRequest",
+      "googleSheets"
+    ],
+    "createdAt": "2025-11-26T02:56:17.052Z",
+    "updatedAt": "2025-11-26T02:56:17.052Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4987.webp",
+    "jsonPath": "/workflows/json/4987.json"
+  },
+  {
+    "id": "3078",
+    "title": "5 Ways to Process Images & PDFs with Gemini AI in n8n",
+    "description": "This workflow demonstrates **five distinct methods** to process and analyze images and PDF documents using Google Gemini AI within n8n. It targets users who want to explore different integration patte",
+    "author": "jksr",
+    "tags": [
+      "Building Blocks",
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "filter",
+      "splitOut",
+      "stickyNote",
+      "httpRequest",
+      "manualTrigger",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.agent",
+      "extractFromFile",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.055Z",
+    "updatedAt": "2025-11-26T02:56:17.055Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3078.webp",
+    "jsonPath": "/workflows/json/3078.json"
+  },
+  {
+    "id": "7792",
+    "title": "7-Day Pinterest Content Planner with Notion Integration and Email Delivery",
+    "description": "This workflow, titled **\"7-Day Pinterest Content Planner with Notion Integration and Email Delivery\"**, automates the creation and distribution of a weekly Pinterest content plan. It targets content c",
+    "author": "shecodesflo",
+    "tags": [
+      "Social Media",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "cron",
+      "notion",
+      "function",
+      "emailSend",
+      "stickyNote",
+      "errorTrigger",
+      "manualTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.060Z",
+    "updatedAt": "2025-11-26T02:56:17.060Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7792.webp",
+    "jsonPath": "/workflows/json/7792.json"
+  },
+  {
+    "id": "5776",
+    "title": ":rocket: Automate LinkedIn Contact Enrichment with Surfe, Google Sheets & HubSpot",
+    "description": "This workflow automates the enrichment of LinkedIn contacts leveraging data stored in Google Sheets, Surfe’s enrichment API, and HubSpot CRM. It is designed to:",
+    "author": "go-surfe",
+    "tags": [
+      "Lead Generation"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "wait",
+      "gmail",
+      "filter",
+      "hubspot",
+      "httpRequest",
+      "googleSheets",
+      "splitInBatches",
+      "googleDriveTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.063Z",
+    "updatedAt": "2025-11-26T02:56:17.063Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5776.webp",
+    "jsonPath": "/workflows/json/5776.json"
+  },
+  {
+    "id": "2907",
+    "title": "A Very Simple \"Human in the Loop\" Email Response System Using AI and IMAP",
+    "description": "This workflow automates the processing of incoming emails by summarizing their content, generating AI-based responses, and incorporating a human approval step before sending replies. It is designed fo",
+    "author": "n3witalia",
+    "tags": [
+      "Building Blocks",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "markdown",
+      "emailSend",
+      "stickyNote",
+      "emailReadImap",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.chainSummarization"
+    ],
+    "createdAt": "2025-11-26T02:56:17.066Z",
+    "updatedAt": "2025-11-26T02:56:17.066Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2907.webp",
+    "jsonPath": "/workflows/json/2907.json"
+  },
+  {
+    "id": "8790",
+    "title": "A-B Test AI Prompts with Supabase, Langchain Agent & OpenAI GPT-4o",
+    "description": "This workflow implements an A/B split testing mechanism for AI prompts using n8n integrations with Supabase, Langchain Agent, and OpenAI's GPT-4o model. It is designed to allocate chat sessions random",
+    "author": "vanhon",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "supabase",
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+    ],
+    "createdAt": "2025-11-26T02:56:17.070Z",
+    "updatedAt": "2025-11-26T02:56:17.070Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8790.webp",
+    "jsonPath": "/workflows/json/8790.json"
+  },
+  {
+    "id": "4267",
+    "title": "AAVE Portfolio Professional AI Agent | Telegram + Email + GPT-4o + Moralis",
+    "description": "This workflow, titled **\"AAVE Portfolio Professional AI Agent\"**, is designed to automatically monitor multiple Ethereum wallet addresses for their Aave V3 decentralized finance (DeFi) portfolio healt",
+    "author": "don-the-gem-dealer",
+    "tags": [
+      "Finance",
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "code",
+      "gmail",
+      "telegram",
+      "stickyNote",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.agent",
+      "httpRequestTool",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.077Z",
+    "updatedAt": "2025-11-26T02:56:17.077Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4267.webp",
+    "jsonPath": "/workflows/json/4267.json"
+  },
+  {
+    "id": "2703",
+    "title": "AI Agent : Google calendar assistant using OpenAI",
+    "description": "This workflow is a beginner-friendly AI Agent designed to assist users with managing their Google Calendar through natural language chat interactions. It leverages OpenAI’s GPT-4o model to interpret u",
+    "author": "dataki",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "googleCalendarTool",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.083Z",
+    "updatedAt": "2025-11-26T02:56:17.083Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2703.webp",
+    "jsonPath": "/workflows/json/2703.json"
+  },
+  {
+    "id": "4652",
+    "title": "AI Agent Creates Content to Be Picked by ChatGPT, Gemini, Google",
+    "description": "This workflow, titled **\"GEO/SEO content engine\"**, is designed to automate the generation, classification, and distribution of content optimized for geographic and SEO purposes. It ingests data from ",
+    "author": "kritika-dagur",
+    "tags": [
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "gmail",
+      "mailgun",
+      "linkedIn",
+      "wordpress",
+      "googleSheets",
+      "removeDuplicates",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "googleSheetsTrigger",
+      "@n8n/n8n-nodes-langchain.textClassifier",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.088Z",
+    "updatedAt": "2025-11-26T02:56:17.088Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4652.webp",
+    "jsonPath": "/workflows/json/4652.json"
+  },
+  {
+    "id": "4952",
+    "title": "AI Agent Integration for Bubble Apps with MCP Protocol Data Access",
+    "description": "This n8n workflow titled **\"AI Agent Integration for Bubble Apps with MCP Protocol Data Access\"** is designed to facilitate integration between an AI agent and a Bubble application via the MCP (Multi-",
+    "author": "salama",
+    "tags": [
+      "Building Blocks",
+      "AI"
+    ],
+    "nodes": [
+      "bubbleTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.091Z",
+    "updatedAt": "2025-11-26T02:56:17.091Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4952.webp",
+    "jsonPath": "/workflows/json/4952.json"
+  },
+  {
+    "id": "5574",
+    "title": "AI Agent Integration for eBay Logistics API with MCP Server",
+    "description": "This workflow, titled **\"AI Agent Integration for eBay Logistics API with MCP Server\"**, serves as an automation layer interfacing with the eBay Logistics API through an MCP (Multi-Channel Platform) s",
+    "author": "cfomodz",
+    "tags": [
+      "Engineering",
+      "AI Chatbot"
+    ],
+    "nodes": [
+      "stickyNote",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.098Z",
+    "updatedAt": "2025-11-26T02:56:17.098Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5574.webp",
+    "jsonPath": "/workflows/json/5574.json"
+  },
+  {
+    "id": "5567",
+    "title": "AI Agent Integration with eBay Buy Marketing API",
+    "description": "This workflow is designed to provide an AI-compatible interface to eBay’s Buy Marketing API, specifically enabling the retrieval of merchandised products based on marketing metrics such as \"Best Selli",
+    "author": "cfomodz",
+    "tags": [
+      "Engineering",
+      "AI Chatbot"
+    ],
+    "nodes": [
+      "stickyNote",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.101Z",
+    "updatedAt": "2025-11-26T02:56:17.101Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5567.webp",
+    "jsonPath": "/workflows/json/5567.json"
+  },
+  {
+    "id": "5319",
+    "title": "AI Agent Managed Tables and Views with 🛠️ Coda Tool MCP Server 💪 18 operations",
+    "description": "This workflow, titled **\"AI Agent Managed Tables and Views with 🛠️ Coda Tool MCP Server 💪 18 operations,\"** serves as an integration hub designed to manage and manipulate Coda documents programmatic",
+    "author": "cfomodz",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "codaTool",
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.105Z",
+    "updatedAt": "2025-11-26T02:56:17.105Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5319.webp",
+    "jsonPath": "/workflows/json/5319.json"
+  },
+  {
+    "id": "5255",
+    "title": "AI Agent Managed 🛠️ Google Contacts Tool MCP Server 💪 5 operations",
+    "description": "This workflow, titled **Google Contacts Tool MCP Server**, is designed to manage Google Contacts via an AI-driven multi-command processing (MCP) server. It supports five core operations on Google Cont",
+    "author": "cfomodz",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "googleContactsTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.108Z",
+    "updatedAt": "2025-11-26T02:56:17.108Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5255.webp",
+    "jsonPath": "/workflows/json/5255.json"
+  },
+  {
+    "id": "5314",
+    "title": "AI Agent Powered Marketing 🛠️ Customer.io Tool MCP Server 💪 all 9 operations",
+    "description": "This workflow, titled **\"Customer.io Tool MCP Server\"**, is designed as an automation server for handling multiple Customer.io marketing platform operations via n8n. It serves as a centralized backend",
+    "author": "cfomodz",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "customerIoTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.112Z",
+    "updatedAt": "2025-11-26T02:56:17.112Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5314.webp",
+    "jsonPath": "/workflows/json/5314.json"
+  },
+  {
+    "id": "4086",
+    "title": "AI Agent To Chat With Files In Supabase Storage and Google Drive",
+    "description": "This workflow implements an AI-powered document management and interaction system that integrates Supabase Storage, Google Drive, and an AI agent within n8n. It enables users to upload, parse, and que",
+    "author": "lowcodingdev",
+    "tags": [
+      "Engineering",
+      "AI",
+      "IT Ops"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "wait",
+      "merge",
+      "switch",
+      "webhook",
+      "supabase",
+      "aggregate",
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "stopAndError",
+      "manualTrigger",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.agent",
+      "googleDriveTrigger",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:17.117Z",
+    "updatedAt": "2025-11-26T02:56:17.117Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4086.webp",
+    "jsonPath": "/workflows/json/4086.json"
+  },
+  {
+    "id": "2621",
+    "title": "AI Agent To Chat With Files In Supabase Storage",
+    "description": "This n8n workflow, **\"AI Agent To Chat With Files In Supabase Storage,\"** enables users to interact conversationally with documents stored in Supabase storage by leveraging AI-powered vector search an",
+    "author": "lowcodingdev",
+    "tags": [
+      "Engineering",
+      "DevOps",
+      "Product",
+      "AI",
+      "IT Ops"
+    ],
+    "nodes": [
+      "if",
+      "merge",
+      "switch",
+      "supabase",
+      "aggregate",
+      "stickyNote",
+      "httpRequest",
+      "manualTrigger",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.agent",
+      "extractFromFile",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:17.127Z",
+    "updatedAt": "2025-11-26T02:56:17.127Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2621.webp",
+    "jsonPath": "/workflows/json/2621.json"
+  },
+  {
+    "id": "2683",
+    "title": "AI Agent for project management and meetings with Airtable and Fireflies",
+    "description": "This workflow automates project management and meeting follow-up by integrating Fireflies meeting transcripts, AI-based task extraction, Airtable task creation, client notifications via email, and sch",
+    "author": "lowcodingdev",
+    "tags": [
+      "Product",
+      "AI"
+    ],
+    "nodes": [
+      "webhook",
+      "airtable",
+      "splitOut",
+      "gmailTool",
+      "stickyNote",
+      "httpRequest",
+      "@n8n/n8n-nodes-langchain.agent",
+      "googleCalendarTool",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.135Z",
+    "updatedAt": "2025-11-26T02:56:17.135Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2683.webp",
+    "jsonPath": "/workflows/json/2683.json"
+  },
+  {
+    "id": "2651",
+    "title": "AI Agent for realtime insights on meetings",
+    "description": "This workflow, titled **\"AI Agent for realtime insights on meetings\"**, is designed as an AI-powered assistant for capturing and analyzing virtual meeting conversations in real-time. It targets busine",
+    "author": "lowcodingdev",
+    "tags": [
+      "Sales",
+      "Engineering",
+      "HR",
+      "Product",
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "webhook",
+      "postgres",
+      "supabase",
+      "stickyNote",
+      "httpRequest",
+      "postgresTool",
+      "@n8n/n8n-nodes-langchain.openAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.138Z",
+    "updatedAt": "2025-11-26T02:56:17.138Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2651.webp",
+    "jsonPath": "/workflows/json/2651.json"
+  },
+  {
+    "id": "2700",
+    "title": "AI Agent to chat with Airtable and analyze data",
+    "description": "This workflow implements an AI-powered conversational agent designed to interact dynamically with Airtable data. It enables users to query, analyze, and visualize data stored in Airtable bases through",
+    "author": "lowcodingdev",
+    "tags": [
+      "Engineering",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "merge",
+      "switch",
+      "airtable",
+      "aggregate",
+      "stickyNote",
+      "httpRequest",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.toolCode",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.143Z",
+    "updatedAt": "2025-11-26T02:56:17.143Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2700.webp",
+    "jsonPath": "/workflows/json/2700.json"
+  },
+  {
+    "id": "2612",
+    "title": "AI Agent to chat with Supabase-PostgreSQL DB",
+    "description": "This workflow enables conversational interaction with a Supabase-hosted PostgreSQL database using an AI agent powered by OpenAI. It allows developers, analysts, or business users to query and analyze ",
+    "author": "lowcodingdev",
+    "tags": [
+      "Engineering",
+      "DevOps",
+      "Product",
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "postgresTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.toolCode",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.146Z",
+    "updatedAt": "2025-11-26T02:56:17.146Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2612.webp",
+    "jsonPath": "/workflows/json/2612.json"
+  },
+  {
+    "id": "2931",
+    "title": "AI Agent with Ollama for current weather and wiki",
+    "description": "This workflow implements an AI-powered conversational agent that provides users with current weather information and Wikipedia summaries by leveraging local Large Language Models (LLMs) through Ollama",
+    "author": "tomkart",
+    "tags": [
+      "Building Blocks",
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOllama",
+      "@n8n/n8n-nodes-langchain.toolWikipedia",
+      "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "@n8n/n8n-nodes-langchain.manualChatTrigger",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.149Z",
+    "updatedAt": "2025-11-26T02:56:17.149Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2931.webp",
+    "jsonPath": "/workflows/json/2931.json"
+  },
+  {
+    "id": "2898",
+    "title": "AI Agent: Find the Right LinkedIn Profiles in Seconds",
+    "description": "This workflow automates LinkedIn prospecting by transforming natural language queries into structured search parameters, performing targeted Google Custom Searches for LinkedIn profiles, filtering rel",
+    "author": "b4dr",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "code",
+      "splitOut",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.151Z",
+    "updatedAt": "2025-11-26T02:56:17.151Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2898.webp",
+    "jsonPath": "/workflows/json/2898.json"
+  },
+  {
+    "id": "3535",
+    "title": "AI Agent: Scrape, Summarize & Save Articles to Notion (Gemini, Browserless)",
+    "description": "This n8n workflow automates capturing web articles or links shared in chat conversations and saving them as structured pages in a Notion database. It leverages Google’s Gemini AI to interpret chat mes",
+    "author": "mihailtd",
+    "tags": [
+      "Other",
+      "AI"
+    ],
+    "nodes": [
+      "notionTool",
+      "stickyNote",
+      "discordTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.155Z",
+    "updatedAt": "2025-11-26T02:56:17.155Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3535.webp",
+    "jsonPath": "/workflows/json/3535.json"
+  },
+  {
+    "id": "5233",
+    "title": "AI Agents can Create, Enrich leads with this Lemlist Tool MCP Server",
+    "description": "This workflow, titled **\"AI Agents can Create, Enrich leads with this Lemlist Tool MCP Server\"**, is designed to interface with the Lemlist platform through its MCP (Multi-Channel Prospecting) Server ",
+    "author": "cfomodz",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "lemlistTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.158Z",
+    "updatedAt": "2025-11-26T02:56:17.158Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5233.webp",
+    "jsonPath": "/workflows/json/5233.json"
+  },
+  {
+    "id": "5317",
+    "title": "AI Agents can retrieve assetts with 🛠️ Contentful Tool MCP Server 💪",
+    "description": "This workflow, titled **\"Contentful Tool MCP Server\"**, functions as a backend server enabling AI agents to retrieve various types of assets and content from Contentful via the MCP (Multi-Channel Plat",
+    "author": "cfomodz",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "contentfulTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.160Z",
+    "updatedAt": "2025-11-26T02:56:17.160Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5317.webp",
+    "jsonPath": "/workflows/json/5317.json"
+  },
+  {
+    "id": "5307",
+    "title": "AI Audio Transcription & Google Docs Report Generator",
+    "description": "This workflow is designed to automate the transcription of audio files received via Gmail and generate professional, timestamped transcription reports in Google Docs. It targets use cases such as meet",
+    "author": "shahrear",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "webhook",
+      "googleDocs",
+      "stickyNote",
+      "gmailTrigger",
+      "@vlm-run/n8n-nodes-vlmrun.vlmRun"
+    ],
+    "createdAt": "2025-11-26T02:56:17.163Z",
+    "updatedAt": "2025-11-26T02:56:17.163Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5307.webp",
+    "jsonPath": "/workflows/json/5307.json"
+  },
+  {
+    "id": "5451",
+    "title": "AI Auto-Save Gmail Receipts to Google Sheets + Google Drive",
+    "description": "This workflow automates the extraction and archival of receipt data from Gmail emails into Google Sheets and Google Drive, targeting users who want to streamline tax tracking and expense management. I",
+    "author": "mattxchong",
+    "tags": [
+      "Invoice Processing",
+      "AI Summarization"
+    ],
+    "nodes": [
+      "set",
+      "gmail",
+      "merge",
+      "stickyNote",
+      "googleDrive",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.agent",
+      "extractFromFile",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.165Z",
+    "updatedAt": "2025-11-26T02:56:17.165Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5451.webp",
+    "jsonPath": "/workflows/json/5451.json"
+  },
+  {
+    "id": "2860",
+    "title": "AI Automated HR Workflow for CV Analysis and Candidate Evaluation",
+    "description": "This workflow automates the end-to-end process of handling job applications by extracting, analyzing, and evaluating candidate CVs using AI-powered nodes and storing the results for HR review. It is d",
+    "author": "n3witalia",
+    "tags": [
+      "HR",
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "merge",
+      "stickyNote",
+      "formTrigger",
+      "googleDrive",
+      "googleSheets",
+      "extractFromFile",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.chainSummarization",
+      "@n8n/n8n-nodes-langchain.informationExtractor",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.168Z",
+    "updatedAt": "2025-11-26T02:56:17.168Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2860.webp",
+    "jsonPath": "/workflows/json/2860.json"
+  },
+  {
+    "id": "4735",
+    "title": "AI Blog Generator for Shopify Product listings:  Using GPT-4o and Google Sheets",
+    "description": "This workflow automates the creation of SEO-friendly blog posts on Shopify for product listings by leveraging AI and Google Sheets as a tracking system. It fetches all Shopify products and their image",
+    "author": "shivam840708",
+    "tags": [
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "noOp",
+      "shopify",
+      "splitOut",
+      "stickyNote",
+      "manualTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "googleSheetsTool",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.171Z",
+    "updatedAt": "2025-11-26T02:56:17.171Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4735.webp",
+    "jsonPath": "/workflows/json/4735.json"
+  },
+  {
+    "id": "8575",
+    "title": "AI Blog Generator for Shopify Products using Google Gemini and Google Sheets",
+    "description": "This workflow automates the generation of SEO-optimized blog posts for Shopify products by leveraging Google Sheets as a data intermediary and Google Gemini AI for content creation. It targets e-comme",
+    "author": "manipritraj",
+    "tags": [
+      "Miscellaneous",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "noOp",
+      "limit",
+      "shopify",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "manualTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.174Z",
+    "updatedAt": "2025-11-26T02:56:17.174Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8575.webp",
+    "jsonPath": "/workflows/json/8575.json"
+  },
+  {
+    "id": "10180",
+    "title": "AI Blog Post Generator with Scheduled or Prompt-based Content for WordPress",
+    "description": "This workflow automates the generation and publication of SEO-optimized blog posts to a WordPress site using AI, specifically OpenAI models, and is triggered either on a schedule or by a chat prompt. ",
+    "author": "eidoc",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "xml",
+      "code",
+      "wordpress",
+      "stickyNote",
+      "httpRequest",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "@n8n/n8n-nodes-langchain.chatTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.177Z",
+    "updatedAt": "2025-11-26T02:56:17.177Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/10180.webp",
+    "jsonPath": "/workflows/json/10180.json"
+  },
+  {
+    "id": "8966",
+    "title": "AI Call Summary + Follow-Up Task to HubSpot",
+    "description": "This workflow automates the process of summarizing sales or discovery calls and managing follow-up tasks within HubSpot CRM. It targets sales and customer success teams who want to quickly log call in",
+    "author": "miha",
+    "tags": [
+      "CRM",
+      "AI Summarization"
+    ],
+    "nodes": [
+      "hubspot",
+      "stickyNote",
+      "formTrigger",
+      "hubspotTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.180Z",
+    "updatedAt": "2025-11-26T02:56:17.180Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8966.webp",
+    "jsonPath": "/workflows/json/8966.json"
+  },
+  {
+    "id": "10045",
+    "title": "AI Candidate Screening Pipeline: LinkedIn to Telegram with Gemini & Apify",
+    "description": "This workflow automates the first-round candidate screening process by integrating Telegram messaging, LinkedIn profile scraping, job description (JD) matching, and AI-powered candidate evaluation. It",
+    "author": "deanjp",
+    "tags": [
+      "HR",
+      "AI Summarization"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "wait",
+      "merge",
+      "telegram",
+      "summarize",
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "googleSheets",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.agent",
+      "extractFromFile",
+      "googleDriveTool",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.184Z",
+    "updatedAt": "2025-11-26T02:56:17.184Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/10045.webp",
+    "jsonPath": "/workflows/json/10045.json"
+  },
+  {
+    "id": "3826",
+    "title": "AI Chat Agent: Dumpling AI + GPT-4o to Auto-Save Local Business Data to Airtable",
+    "description": "This workflow automates the process of discovering and enriching local business leads using AI, then saving structured data into Airtable for easy management. It is designed for digital marketers, lea",
+    "author": "yang",
+    "tags": [
+      "Sales",
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "stickyNote",
+      "airtableTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolHttpRequest",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.186Z",
+    "updatedAt": "2025-11-26T02:56:17.186Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3826.webp",
+    "jsonPath": "/workflows/json/3826.json"
+  },
+  {
+    "id": "4402",
+    "title": "AI Chatbot Agent with a Panel of Experts using InfraNodus GraphRAG Knowledge",
+    "description": "This n8n workflow implements an AI Chatbot Agent that leverages multiple specialized knowledge experts based on InfraNodus Graph RAG (Retrieval-Augmented Generation) technology. Its main purpose is to",
+    "author": "infranodus",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.189Z",
+    "updatedAt": "2025-11-26T02:56:17.189Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4402.webp",
+    "jsonPath": "/workflows/json/4402.json"
+  },
+  {
+    "id": "4050",
+    "title": "AI Chatbot Call Center: Demo Call Back (Production-Ready, Part 6)",
+    "description": "This workflow, titled **\"AI Chatbot Call Center: Demo Call Back (Production-Ready, Part 6)\"**, is a **Telegram Output Workflow** designed to receive processed messages from other sub-workflows and out",
+    "author": "chatpaylabs",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "redis",
+      "switch",
+      "postgres",
+      "telegram",
+      "stickyNote",
+      "httpRequest",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "executeWorkflowTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.192Z",
+    "updatedAt": "2025-11-26T02:56:17.192Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4050.webp",
+    "jsonPath": "/workflows/json/4050.json"
+  },
+  {
+    "id": "4045",
+    "title": "AI Chatbot Call Center: Demo Call Center (Production-Ready, Part 2)",
+    "description": "This workflow, titled **\"☎️ Demo Call Center\"**, serves as the main entry point for a multi-service chatbot designed for call center operations. Its primary purpose is to receive messages from an exte",
+    "author": "chatpaylabs",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "redis",
+      "switch",
+      "stickyNote",
+      "postgresTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "executeWorkflow",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatXAiGrok",
+      "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+    ],
+    "createdAt": "2025-11-26T02:56:17.194Z",
+    "updatedAt": "2025-11-26T02:56:17.194Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4045.webp",
+    "jsonPath": "/workflows/json/4045.json"
+  },
+  {
+    "id": "4052",
+    "title": "AI Chatbot Call Center: General Exception Flow (Production-Ready, Part 8)",
+    "description": "This workflow, titled **\"👻 Exception Flow\"**, serves as a centralized error handling mechanism within an n8n environment. Its primary purpose is to listen for errors occurring in other workflows and ",
+    "author": "chatpaylabs",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "slack",
+      "errorTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.197Z",
+    "updatedAt": "2025-11-26T02:56:17.197Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4052.webp",
+    "jsonPath": "/workflows/json/4052.json"
+  },
+  {
+    "id": "4051",
+    "title": "AI Chatbot Call Center: Taxi Booking Support (Production-Ready, Part 7)",
+    "description": "This workflow, named **🫶 Taxi Booking Support**, is a production-ready background process designed to automate after-sales support for a taxi booking system. Its primary purpose is to periodically ch",
+    "author": "chatpaylabs",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "switch",
+      "postgres",
+      "stickyNote",
+      "googleCalendar",
+      "@n8n/n8n-nodes-langchain.agent",
+      "executeWorkflow",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatXAiGrok"
+    ],
+    "createdAt": "2025-11-26T02:56:17.199Z",
+    "updatedAt": "2025-11-26T02:56:17.199Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4051.webp",
+    "jsonPath": "/workflows/json/4051.json"
+  },
+  {
+    "id": "4048",
+    "title": "AI Chatbot Call Center: Taxi Booking Worker (Production-Ready, Part 5)",
+    "description": "This workflow, titled **\"AI Chatbot Call Center: Taxi Booking Worker (Production-Ready, Part 5)\"**, is designed to automate taxi booking management within a call center environment. It integrates an A",
+    "author": "chatpaylabs",
+    "tags": [],
+    "nodes": [
+      "if",
+      "set",
+      "redis",
+      "switch",
+      "postgres",
+      "stickyNote",
+      "googleCalendar",
+      "executeWorkflow",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "executeWorkflowTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.202Z",
+    "updatedAt": "2025-11-26T02:56:17.202Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4048.webp",
+    "jsonPath": "/workflows/json/4048.json"
+  },
+  {
+    "id": "4046",
+    "title": "AI Chatbot Call Center: Taxi Service (Production-Ready, Part 3)",
+    "description": "This workflow, titled **\"🛎️ Taxi Service\"**, is a production-ready core component for a Taxi Service chatbot integrated with a call center. It is designed to handle incoming taxi service requests, va",
+    "author": "chatpaylabs",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "redis",
+      "switch",
+      "postgres",
+      "redisTool",
+      "stickyNote",
+      "postgresTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "executeWorkflow",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatXAiGrok",
+      "@n8n/n8n-nodes-langchain.memoryPostgresChat"
+    ],
+    "createdAt": "2025-11-26T02:56:17.205Z",
+    "updatedAt": "2025-11-26T02:56:17.205Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4046.webp",
+    "jsonPath": "/workflows/json/4046.json"
+  },
+  {
+    "id": "4044",
+    "title": "AI Chatbot Call Center: Telegram Call In (Production-Ready, Part 1a)",
+    "description": "This workflow, titled **\"🤙 Telegram Call In\"**, is designed as a production-ready Telegram chatbot interface for an AI-driven call center. It targets high-skill users who want to automate processing ",
+    "author": "chatpaylabs",
+    "tags": [],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "redis",
+      "switch",
+      "postgres",
+      "telegram",
+      "stickyNote",
+      "executeWorkflow",
+      "extractFromFile",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "n8n-nodes-google-speech.googleSpeech"
+    ],
+    "createdAt": "2025-11-26T02:56:17.209Z",
+    "updatedAt": "2025-11-26T02:56:17.209Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4044.webp",
+    "jsonPath": "/workflows/json/4044.json"
+  },
+  {
+    "id": "6603",
+    "title": "AI Chatbot that Queries Baserow Database with OpenAI GPT-4 Mini",
+    "description": "This workflow implements an AI chatbot that interacts with users via a chat interface and queries a Baserow database using OpenAI's GPT-4 Mini model. It is designed for use cases where conversational ",
+    "author": "gegenfeld",
+    "tags": [
+      "Support Chatbot",
+      "AI Chatbot"
+    ],
+    "nodes": [
+      "stickyNote",
+      "baserowTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.211Z",
+    "updatedAt": "2025-11-26T02:56:17.211Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/6603.webp",
+    "jsonPath": "/workflows/json/6603.json"
+  },
+  {
+    "id": "6604",
+    "title": "AI Chatbot with OpenAI GPT-4.1-Mini and Supabase Database Knowledge Base",
+    "description": "This workflow implements an AI chatbot leveraging OpenAI’s GPT-4.1-Mini model, integrated with a Supabase database as a knowledge base. It is designed to support conversational AI applications where d",
+    "author": "gegenfeld",
+    "tags": [
+      "Internal Wiki",
+      "AI Chatbot"
+    ],
+    "nodes": [
+      "stickyNote",
+      "supabaseTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.213Z",
+    "updatedAt": "2025-11-26T02:56:17.213Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/6604.webp",
+    "jsonPath": "/workflows/json/6604.json"
+  },
+  {
+    "id": "4377",
+    "title": "AI Client Onboarding Agent: Auto Welcome Email Generator",
+    "description": "This workflow automates the client onboarding process by generating and sending a personalized welcome email based on new client data added to a Google Sheets document. It targets businesses that want",
+    "author": "yaron-nofluff",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "noOp",
+      "gmail",
+      "start",
+      "stickyNote",
+      "errorTrigger",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "googleSheetsTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.217Z",
+    "updatedAt": "2025-11-26T02:56:17.217Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4377.webp",
+    "jsonPath": "/workflows/json/4377.json"
+  },
+  {
+    "id": "4032",
+    "title": "AI Competitor Review Analyzer with Dumpling AI + GPT-4o + Google Sheets",
+    "description": "This workflow automates the process of collecting, analyzing, and summarizing Google reviews for competitor businesses listed in a Google Sheet. It is designed to serve marketers, SEO specialists, pro",
+    "author": "yang",
+    "tags": [],
+    "nodes": [
+      "splitOut",
+      "aggregate",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "googleSheetsTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.220Z",
+    "updatedAt": "2025-11-26T02:56:17.220Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4032.webp",
+    "jsonPath": "/workflows/json/4032.json"
+  },
+  {
+    "id": "8090",
+    "title": "AI Course Scheduler from Completed Prereqs (Google Sheets + OpenAI)",
+    "description": "This workflow automates the creation of personalized Fall 2025 course schedules for students based on their completed prerequisite courses. It reads student data from a Google Sheets spreadsheet, uses",
+    "author": "rbreen",
+    "tags": [],
+    "nodes": [
+      "set",
+      "splitOut",
+      "stickyNote",
+      "googleSheets",
+      "manualTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.223Z",
+    "updatedAt": "2025-11-26T02:56:17.223Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8090.webp",
+    "jsonPath": "/workflows/json/8090.json"
+  },
+  {
+    "id": "2183",
+    "title": "AI Crew to Automate Fundamental Stock Analysis - Q&A Workflow",
+    "description": "This workflow automates fundamental stock analysis by implementing a Stock Q&A engine that answers questions using SEC 10K data. It is designed as the back-end component of a two-part system, where th",
+    "author": "derekcheungsa",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "webhook",
+      "stickyNote",
+      "googleDrive",
+      "manualTrigger",
+      "respondToWebhook",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.chainRetrievalQa",
+      "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "@n8n/n8n-nodes-langchain.manualChatTrigger",
+      "@n8n/n8n-nodes-langchain.vectorStoreQdrant",
+      "@n8n/n8n-nodes-langchain.retrieverVectorStore",
+      "@n8n/n8n-nodes-langchain.documentBinaryInputLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:17.226Z",
+    "updatedAt": "2025-11-26T02:56:17.226Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2183.webp",
+    "jsonPath": "/workflows/json/2183.json"
+  },
+  {
+    "id": "7631",
+    "title": "AI Customer Support Chat for Web Hosting with Google Gemini & WHMCS",
+    "description": "This workflow implements an AI-powered customer support chat system tailored for a web hosting company. It automates responses to customer inquiries about hosting plans, domain services, payment metho",
+    "author": "omerfayyaz",
+    "tags": [
+      "AI RAG",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "webhook",
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "httpRequestTool",
+      "googleSheetsTool",
+      "respondToWebhook",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow"
+    ],
+    "createdAt": "2025-11-26T02:56:17.231Z",
+    "updatedAt": "2025-11-26T02:56:17.231Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7631.webp",
+    "jsonPath": "/workflows/json/7631.json"
+  },
+  {
+    "id": "8801",
+    "title": "AI DJ: Text-to-Spotify Playlist Generator with Linkup and GPT4",
+    "description": "This workflow, titled **\"AI DJ: Text-to-Spotify Playlist Generator with Linkup and GPT4\"**, automates the creation of a Spotify playlist based on a natural language text prompt submitted via a web for",
+    "author": "duv",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "set",
+      "form",
+      "spotify",
+      "splitOut",
+      "stickyNote",
+      "formTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.235Z",
+    "updatedAt": "2025-11-26T02:56:17.235Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8801.webp",
+    "jsonPath": "/workflows/json/8801.json"
+  },
+  {
+    "id": "2771",
+    "title": "AI Data Extraction with Dynamic Prompts and Airtable",
+    "description": "This workflow implements a dynamic AI-driven data extraction pattern integrated with Airtable, designed to extract flexible and user-defined attributes from documents (PDF resumes in this example). It",
+    "author": "jimleuk",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "code",
+      "noOp",
+      "filter",
+      "switch",
+      "webhook",
+      "airtable",
+      "stickyNote",
+      "httpRequest",
+      "manualTrigger",
+      "splitInBatches",
+      "extractFromFile",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.238Z",
+    "updatedAt": "2025-11-26T02:56:17.238Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2771.webp",
+    "jsonPath": "/workflows/json/2771.json"
+  },
+  {
+    "id": "2780",
+    "title": "AI Data Extraction with Dynamic Prompts and Baserow",
+    "description": "This workflow implements a dynamic AI-driven data extraction pattern for Baserow tables, designed to flexibly extract structured data from unstructured inputs such as PDFs. It leverages Baserow’s fiel",
+    "author": "jimleuk",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "set",
+      "code",
+      "noOp",
+      "filter",
+      "switch",
+      "webhook",
+      "splitOut",
+      "stickyNote",
+      "httpRequest",
+      "splitInBatches",
+      "extractFromFile",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.240Z",
+    "updatedAt": "2025-11-26T02:56:17.240Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2780.webp",
+    "jsonPath": "/workflows/json/2780.json"
+  },
+  {
+    "id": "3169",
+    "title": "AI Email Analyzer: Process PDFs, Images & Save to Google Drive + Telegram",
+    "description": "This workflow automates the analysis and summarization of incoming emails and their attachments (PDFs and images) using AI models. It extracts content from emails and attachments, generates summaries,",
+    "author": "n3witalia",
+    "tags": [
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "merge",
+      "switch",
+      "markdown",
+      "splitOut",
+      "telegram",
+      "aggregate",
+      "stickyNote",
+      "googleDrive",
+      "googleSheets",
+      "emailReadImap",
+      "extractFromFile",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "@n8n/n8n-nodes-langchain.chainSummarization",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.243Z",
+    "updatedAt": "2025-11-26T02:56:17.243Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3169.webp",
+    "jsonPath": "/workflows/json/3169.json"
+  },
+  {
+    "id": "5446",
+    "title": "AI Email Assistant: Prioritize Gmail with ChatGPT Summaries and Slack Digests",
+    "description": "This workflow, titled **AI Email Assistant: Prioritize Gmail with ChatGPT Summaries and Slack Digests**, automates the processing of incoming Gmail messages for a busy startup founder. It uses AI (Ope",
+    "author": "n8ndarsheel",
+    "tags": [
+      "Ticket Management",
+      "AI Summarization"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "gmail",
+      "slack",
+      "gmailTrigger",
+      "googleSheets",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.openAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.246Z",
+    "updatedAt": "2025-11-26T02:56:17.246Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5446.webp",
+    "jsonPath": "/workflows/json/5446.json"
+  },
+  {
+    "id": "4748",
+    "title": "AI Email Auto-Responder System- AI RAG Agent for Email Inbox",
+    "description": "The **AI Email Auto-Responder System - AI RAG Agent for Email Inbox** workflow automates the process of receiving emails, analyzing their content with AI, searching relevant information in vector stor",
+    "author": "lukaszb",
+    "tags": [
+      "Support",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "gmail",
+      "notion",
+      "aggregate",
+      "googleDocs",
+      "stickyNote",
+      "googleDrive",
+      "gmailTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "googleDriveTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.vectorStorePinecone",
+      "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:17.250Z",
+    "updatedAt": "2025-11-26T02:56:17.250Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4748.webp",
+    "jsonPath": "/workflows/json/4748.json"
+  },
+  {
+    "id": "4507",
+    "title": "AI Email Classifier & Auto-Delete for Gmail (SPAM-OFFER Cleaner)",
+    "description": "This workflow named **\"Auto Spam/Marketing & Offer Delete\"** is designed to automatically monitor a Gmail inbox and classify incoming emails into three categories: **SPAM**, **OFFER**, and **IMPORTAND",
+    "author": "lukaszb",
+    "tags": [
+      "Other",
+      "AI"
+    ],
+    "nodes": [
+      "if",
+      "gmail",
+      "stickyNote",
+      "gmailTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.253Z",
+    "updatedAt": "2025-11-26T02:56:17.253Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4507.webp",
+    "jsonPath": "/workflows/json/4507.json"
+  },
+  {
+    "id": "8967",
+    "title": "AI Email Reply with Full HubSpot Context + Slack Approval",
+    "description": "This workflow automates the process of replying to inbound Gmail messages with contextually rich, AI-generated email drafts that include relevant CRM data from HubSpot. It is designed for customer sup",
+    "author": "miha",
+    "tags": [
+      "CRM",
+      "AI Summarization"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "gmail",
+      "slack",
+      "filter",
+      "hubspot",
+      "stickyNote",
+      "httpRequest",
+      "gmailTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.257Z",
+    "updatedAt": "2025-11-26T02:56:17.257Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8967.webp",
+    "jsonPath": "/workflows/json/8967.json"
+  },
+  {
+    "id": "3968",
+    "title": "AI Email Triage & Alert System with GPT-4 and Telegram Notifications",
+    "description": "This workflow is a comprehensive, fully automated AI Email Triage & Alert System built in n8n to streamline email inbox management using advanced AI models (GPT-4, Google Gemini) and Telegram notifica",
+    "author": "pjawz",
+    "tags": [
+      "Support",
+      "AI",
+      "IT Ops"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "noOp",
+      "gmail",
+      "switch",
+      "webhook",
+      "airtable",
+      "telegram",
+      "aggregate",
+      "gmailTool",
+      "stickyNote",
+      "httpRequest",
+      "gmailTrigger",
+      "stopAndError",
+      "@n8n/n8n-nodes-langchain.agent",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.chainLlm",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "executeWorkflowTrigger",
+      "@n8n/n8n-nodes-langchain.textClassifier",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "@n8n/n8n-nodes-langchain.memoryPostgresChat",
+      "@n8n/n8n-nodes-langchain.outputParserAutofixing",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.261Z",
+    "updatedAt": "2025-11-26T02:56:17.261Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3968.webp",
+    "jsonPath": "/workflows/json/3968.json"
+  },
+  {
+    "id": "5417",
+    "title": "AI Facebook Ad Spy Tool with Apify, OpenAI, Gemini & Google Sheets",
+    "description": "This workflow is an **AI-powered Facebook Ad Spy Tool** designed to scrape, analyze, and summarize competitor ads from Facebook’s public Ad Library. It targets marketing agencies, PPC clients, and adv",
+    "author": "nicksaraev",
+    "tags": [
+      "Market Research",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "wait",
+      "filter",
+      "switch",
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "googleSheets",
+      "manualTrigger",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.openAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.264Z",
+    "updatedAt": "2025-11-26T02:56:17.264Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5417.webp",
+    "jsonPath": "/workflows/json/5417.json"
+  },
+  {
+    "id": "2790",
+    "title": "AI Fitness Coach Strava Data Analysis and Personalized Training Insights",
+    "description": "This workflow, titled **\"AI Fitness Coach Strava Data Analysis and Personalized Training Insights\"**, is designed to serve as a virtual triathlon coach by integrating with Strava to analyze athlete ac",
+    "author": "amjid",
+    "tags": [
+      "Other",
+      "AI"
+    ],
+    "nodes": [
+      "code",
+      "gmail",
+      "whatsApp",
+      "emailSend",
+      "stickyNote",
+      "stravaTrigger",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.266Z",
+    "updatedAt": "2025-11-26T02:56:17.266Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/2790.webp",
+    "jsonPath": "/workflows/json/2790.json"
+  },
+  {
+    "id": "7666",
+    "title": "AI Guest Post Generator with OpenAI & Google Sheets Automation",
+    "description": "This workflow automates the generation of guest posts in German using OpenAI's language model and manages tasks via a Google Sheets planning document. It is designed for content teams or marketers who",
+    "author": "juanestrella",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "openAi",
+      "googleSheets",
+      "manualTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.268Z",
+    "updatedAt": "2025-11-26T02:56:17.268Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7666.webp",
+    "jsonPath": "/workflows/json/7666.json"
+  },
+  {
+    "id": "7535",
+    "title": "AI Hairstyle Preview Generator with OpenAI and LINE Group Sharing",
+    "description": "This workflow, titled **AI Hairstyle Preview Generator with OpenAI and LINE Group Sharing**, is designed to automate the process of generating hairstyle edits on user-submitted images while preserving",
+    "author": "kote2",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "webhook",
+      "stickyNote",
+      "formTrigger",
+      "httpRequest",
+      "convertToFile"
+    ],
+    "createdAt": "2025-11-26T02:56:17.271Z",
+    "updatedAt": "2025-11-26T02:56:17.271Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7535.webp",
+    "jsonPath": "/workflows/json/7535.json"
+  },
+  {
+    "id": "4885",
+    "title": "AI Icebreaker Builder: Scrape Sites with Dumpling AI and Save to Airtable",
+    "description": "This workflow automates the process of generating personalized cold outreach email content for new leads stored in an Airtable base. It targets sales or marketing teams who want to efficiently craft c",
+    "author": "yang",
+    "tags": [
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "noOp",
+      "wait",
+      "airtable",
+      "stickyNote",
+      "httpRequest",
+      "splitInBatches",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.openAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.273Z",
+    "updatedAt": "2025-11-26T02:56:17.273Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/4885.webp",
+    "jsonPath": "/workflows/json/4885.json"
+  },
+  {
+    "id": "10466",
+    "title": "AI Image Generation & Editing with Google Gemini and Telegram Bot",
+    "description": "This workflow enables AI-driven image generation and editing through Telegram using Google Gemini’s generative image capabilities and Google Drive for storage. It is designed for users interacting via",
+    "author": "santhejkallada",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "merge",
+      "airtable",
+      "telegram",
+      "aggregate",
+      "stickyNote",
+      "googleDrive",
+      "httpRequest",
+      "extractFromFile",
+      "telegramTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.276Z",
+    "updatedAt": "2025-11-26T02:56:17.276Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/10466.webp",
+    "jsonPath": "/workflows/json/10466.json"
+  },
+  {
+    "id": "5661",
+    "title": "AI Image Nudity Detection Tool with Image Moderation API",
+    "description": "This workflow, titled **AI Image Nudity Detection Tool with Image Moderation API**, is designed to provide a simple and effective interface for detecting nudity in images using the ModerateContent.com",
+    "author": "cfomodz",
+    "tags": [
+      "Document Extraction",
+      "Miscellaneous",
+      "AI Summarization"
+    ],
+    "nodes": [
+      "stickyNote",
+      "httpRequestTool",
+      "@n8n/n8n-nodes-langchain.mcpTrigger"
+    ],
+    "createdAt": "2025-11-26T02:56:17.279Z",
+    "updatedAt": "2025-11-26T02:56:17.279Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/5661.webp",
+    "jsonPath": "/workflows/json/5661.json"
+  },
+  {
+    "id": "9938",
+    "title": "AI Industry Trend Monitor 24-7 Across X, Gmail, and Websites Using GPT-5",
+    "description": "This workflow, titled **\"AI Industry Trend Monitor 24/7 Across X, Gmail, and Websites Using GPT-5,\"** is designed to continuously monitor and analyze industry trends related to AI by aggregating data ",
+    "author": "leeweihernandez07",
+    "tags": [
+      "Market Research",
+      "AI RAG"
+    ],
+    "nodes": [
+      "set",
+      "gmail",
+      "airtop",
+      "filter",
+      "splitOut",
+      "aggregate",
+      "airtopTool",
+      "stickyNote",
+      "httpRequest",
+      "googleSheets",
+      "perplexityTool",
+      "@n8n/n8n-nodes-langchain.agent",
+      "scheduleTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.281Z",
+    "updatedAt": "2025-11-26T02:56:17.281Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/9938.webp",
+    "jsonPath": "/workflows/json/9938.json"
+  },
+  {
+    "id": "7905",
+    "title": "AI Invoice Agent",
+    "description": "The **AI Invoice Agent** workflow automates the generation, emailing, and tracking of client invoices for a creative agency named \"Upward Engine.\" It is designed for use cases where invoice data is st",
+    "author": "rakinjakaria",
+    "tags": [
+      "Invoice Processing",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "set",
+      "gmail",
+      "filter",
+      "stickyNote",
+      "googleSheets",
+      "manualTrigger",
+      "splitInBatches",
+      "@n8n/n8n-nodes-langchain.agent",
+      "n8n-nodes-craftmypdf.craftMyPdf",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.informationExtractor"
+    ],
+    "createdAt": "2025-11-26T02:56:17.283Z",
+    "updatedAt": "2025-11-26T02:56:17.283Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7905.webp",
+    "jsonPath": "/workflows/json/7905.json"
+  },
+  {
+    "id": "9418",
+    "title": "AI Job Relevancy Scorer: Search LinkedIn Jobs with GPT-4o-mini & Google Sheets",
+    "description": "This workflow, titled **AI Job Relevancy Scorer: Search LinkedIn Jobs with GPT-4o-mini & Google Sheets**, automates the search, scoring, filtering, and tracking of relevant job listings from LinkedIn,",
+    "author": "deonix-ai",
+    "tags": [],
+    "nodes": [
+      "if",
+      "code",
+      "merge",
+      "stickyNote",
+      "formTrigger",
+      "httpRequest",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.openAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.286Z",
+    "updatedAt": "2025-11-26T02:56:17.286Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/9418.webp",
+    "jsonPath": "/workflows/json/9418.json"
+  },
+  {
+    "id": "6538",
+    "title": "AI Knowledge Base Assistant with OpenAI, Supabase & Google Drive Doc Sync",
+    "description": "This workflow is designed as an **AI Knowledge Base Assistant** that integrates **OpenAI**, **Supabase Vector Database**, and **Google Drive** to create an automated, intelligent chatbot system. It su",
+    "author": "abdulmir",
+    "tags": [
+      "Internal Wiki",
+      "AI RAG"
+    ],
+    "nodes": [
+      "set",
+      "limit",
+      "switch",
+      "supabase",
+      "telegram",
+      "stickyNote",
+      "googleDrive",
+      "@n8n/n8n-nodes-langchain.agent",
+      "extractFromFile",
+      "telegramTrigger",
+      "@n8n/n8n-nodes-langchain.openAi",
+      "googleDriveTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolVectorStore",
+      "@n8n/n8n-nodes-langchain.embeddingsOpenAi",
+      "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "@n8n/n8n-nodes-langchain.vectorStoreSupabase",
+      "@n8n/n8n-nodes-langchain.documentDefaultDataLoader",
+      "@n8n/n8n-nodes-langchain.textSplitterRecursiveCharacterTextSplitter"
+    ],
+    "createdAt": "2025-11-26T02:56:17.288Z",
+    "updatedAt": "2025-11-26T02:56:17.288Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/6538.webp",
+    "jsonPath": "/workflows/json/6538.json"
+  },
+  {
+    "id": "8909",
+    "title": "AI Lead Scoring & Enrichment from Mailchimp to HubSpot and Pipedrive with GPT-4o",
+    "description": "This workflow automates the lead capture, enrichment, qualification, and CRM synchronization process for new subscribers from a Mailchimp list. It targets marketing and sales teams aiming to improve l",
+    "author": "itechnotion",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "code",
+      "hubspot",
+      "pipedrive",
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "mailchimpTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi"
+    ],
+    "createdAt": "2025-11-26T02:56:17.293Z",
+    "updatedAt": "2025-11-26T02:56:17.293Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8909.webp",
+    "jsonPath": "/workflows/json/8909.json"
+  },
+  {
+    "id": "8985",
+    "title": "AI Lead Scoring & Routing with Google Gemini, Sheets and Slack Notifications",
+    "description": "This workflow automates lead intake, sentiment classification, storage, and notification for lead management using AI and integration tools. It targets businesses or teams who receive leads via Typefo",
+    "author": "meak",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "set",
+      "merge",
+      "slack",
+      "webhook",
+      "stickyNote",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.sentimentAnalysis",
+      "@n8n/n8n-nodes-langchain.lmChatGoogleGemini"
+    ],
+    "createdAt": "2025-11-26T02:56:17.296Z",
+    "updatedAt": "2025-11-26T02:56:17.296Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/8985.webp",
+    "jsonPath": "/workflows/json/8985.json"
+  },
+  {
+    "id": "3020",
+    "title": "AI Linux system administrator for managing Linux VPS instance",
+    "description": "This workflow enables AI-driven management of a Linux VPS instance through chat commands. It is designed for developers, system administrators, and IT professionals who want to interact with their Lin",
+    "author": "hostinger",
+    "tags": [
+      "DevOps"
+    ],
+    "nodes": [
+      "stickyNote",
+      "@n8n/n8n-nodes-langchain.agent",
+      "@n8n/n8n-nodes-langchain.chatTrigger",
+      "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "@n8n/n8n-nodes-langchain.toolHttpRequest"
+    ],
+    "createdAt": "2025-11-26T02:56:17.298Z",
+    "updatedAt": "2025-11-26T02:56:17.298Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3020.webp",
+    "jsonPath": "/workflows/json/3020.json"
+  },
+  {
+    "id": "7195",
+    "title": "AI Lyrics Study Bot for Telegram — Translation, Summary, Vocabulary",
+    "description": "This workflow implements a Telegram bot specialized in analyzing song lyrics. It accepts commands with a song lyrics URL, downloads and cleans the lyrics text from the URL, then uses OpenAI’s language",
+    "author": "followdrabbit",
+    "tags": [
+      "Content Creation",
+      "Multimodal AI"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "noOp",
+      "openAi",
+      "switch",
+      "webhook",
+      "telegram",
+      "stickyNote",
+      "httpRequest"
+    ],
+    "createdAt": "2025-11-26T02:56:17.303Z",
+    "updatedAt": "2025-11-26T02:56:17.303Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/7195.webp",
+    "jsonPath": "/workflows/json/7195.json"
+  },
+  {
+    "id": "3935",
+    "title": "AI Marketing Agent for Lead Generation: Reddit + OpenRouter + Gmail",
+    "description": "This n8n workflow, titled **AI Marketing Agent for Lead Generation: Reddit + OpenRouter + Gmail**, is designed to automate lead generation by monitoring Reddit posts relevant to a user’s business or i",
+    "author": "just-aristides",
+    "tags": [
+      "Sales",
+      "AI",
+      "Marketing"
+    ],
+    "nodes": [
+      "if",
+      "set",
+      "code",
+      "gmail",
+      "merge",
+      "reddit",
+      "splitOut",
+      "stickyNote",
+      "formTrigger",
+      "googleSheets",
+      "@n8n/n8n-nodes-langchain.agent",
+      "httpRequestTool",
+      "removeDuplicates",
+      "@n8n/n8n-nodes-langchain.lmChatOpenRouter",
+      "@n8n/n8n-nodes-langchain.outputParserStructured"
+    ],
+    "createdAt": "2025-11-26T02:56:17.305Z",
+    "updatedAt": "2025-11-26T02:56:17.305Z",
+    "views": 0,
+    "price": 0,
+    "thumbnail": "/workflows/images/3935.webp",
+    "jsonPath": "/workflows/json/3935.json"
+  }
 ]

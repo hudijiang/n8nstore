@@ -7,11 +7,15 @@
  * and prepares them for use in the n8n Workflow Store.
  */
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // Configuration
-const SOURCE_DIR = '/tmp/n8nworkflows/archive/workflows';
+const SOURCE_DIR = '/tmp/n8nworkflows/workflows';
 const TARGET_DIR = path.join(__dirname, '../public/workflows');
 const MAX_WORKFLOWS = 100; // Import top 100 workflows initially
 
@@ -36,35 +40,96 @@ function readJSON(filePath) {
         const content = fs.readFileSync(filePath, 'utf8');
         return JSON.parse(content);
     } catch (error) {
-        console.error(`Error reading ${filePath}:`, error.message);
         return null;
+    }
+}
+
+/**
+ * Extract description from README
+ */
+function extractDescription(readmePath) {
+    try {
+        const content = fs.readFileSync(readmePath, 'utf8');
+        const lines = content.split('\n');
+        let description = '';
+        let foundOverview = false;
+
+        for (const line of lines) {
+            if (line.includes('Workflow Overview') || line.includes('Overview')) {
+                foundOverview = true;
+                continue;
+            }
+            if (foundOverview && line.trim() && !line.startsWith('#') && !line.startsWith('http')) {
+                description = line.trim();
+                break;
+            }
+        }
+
+        return description || lines.find(l => l.trim() && !l.startsWith('#') && !l.startsWith('http'))?.trim() || '';
+    } catch (error) {
+        return '';
     }
 }
 
 /**
  * Extract workflow data from a workflow directory
  */
-function extractWorkflowData(workflowDir) {
-    const metadataPath = path.join(workflowDir, 'metadata.json');
-    const workflowPath = path.join(workflowDir, 'workflow.json');
+function extractWorkflowData(workflowDir, processedCount) {
+    const dirName = path.basename(workflowDir);
 
-    const metadata = readJSON(metadataPath);
-    const workflow = readJSON(workflowPath);
+    try {
+        const files = fs.readdirSync(workflowDir);
 
-    if (!metadata || !workflow) {
+        // Find files
+        const metadataFile = files.find(f => f.startsWith('metada-') && f.endsWith('.json'));
+        const workflowFile = files.find(f => f.endsWith('.json') && !f.startsWith('metada-'));
+        const thumbnailFile = files.find(f => f.endsWith('.webp'));
+        const readmeFile = files.find(f => f.startsWith('readme-') && f.endsWith('.md'));
+
+        if (!metadataFile || !workflowFile) {
+            if (processedCount < 5) console.log(`⚠️  Skipping ${dirName}: missing files`);
+            return null;
+        }
+
+        const metadata = readJSON(path.join(workflowDir, metadataFile));
+        const workflow = readJSON(path.join(workflowDir, workflowFile));
+
+        if (!metadata || !workflow) {
+            if (processedCount < 5) console.log(`⚠️  Skipping ${dirName}: failed to parse JSON`);
+            return null;
+        }
+
+        // Extract ID from metadata filename
+        const id = metadataFile.replace('metada-', '').replace('.json', '');
+
+        // Extract description from README
+        const description = readmeFile ? extractDescription(path.join(workflowDir, readmeFile)) : '';
+
+        // Extract title from directory name (remove ID suffix)
+        const title = dirName.replace(/-\d+$/, '').trim();
+
+        // Extract node types
+        const nodes = metadata.nodeTypes ? Object.keys(metadata.nodeTypes).map(n => n.replace('n8n-nodes-base.', '')) : [];
+
+        // Extract tags from categories
+        const tags = metadata.categories ? metadata.categories.map(c => c.name) : [];
+
+        return {
+            id,
+            dirName,
+            title,
+            description,
+            metadata,
+            workflow,
+            workflowFile,
+            thumbnailPath: thumbnailFile ? path.join(workflowDir, thumbnailFile) : null,
+            thumbnailFile,
+            nodes,
+            tags,
+        };
+    } catch (error) {
         return null;
     }
-
-    // Find the thumbnail image
-    const files = fs.readdirSync(workflowDir);
-    const thumbnail = files.find(f => f.endsWith('.webp'));
-
-    return {
-        id: path.basename(workflowDir),
-        metadata,
-        workflow,
-        thumbnailPath: thumbnail ? path.join(workflowDir, thumbnail) : null,
-    };
 }
 
 /**
@@ -86,9 +151,15 @@ function processWorkflows() {
     // Get all workflow directories
     const workflowDirs = fs.readdirSync(SOURCE_DIR)
         .map(name => path.join(SOURCE_DIR, name))
-        .filter(dir => fs.statSync(dir).isDirectory());
+        .filter(dir => {
+            try {
+                return fs.statSync(dir).isDirectory();
+            } catch (e) {
+                return false;
+            }
+        });
 
-    console.log(`📦 Found ${workflowDirs.length} workflows`);
+    console.log(`📦 Found ${workflowDirs.length} workflow directories\n`);
 
     // Process workflows
     const workflows = [];
@@ -96,7 +167,7 @@ function processWorkflows() {
     let skipped = 0;
 
     for (const dir of workflowDirs.slice(0, MAX_WORKFLOWS)) {
-        const data = extractWorkflowData(dir);
+        const data = extractWorkflowData(dir, processed);
 
         if (!data) {
             skipped++;
@@ -105,28 +176,36 @@ function processWorkflows() {
 
         // Copy workflow JSON
         const jsonTarget = path.join(DIRS.json, `${data.id}.json`);
-        fs.copyFileSync(
-            path.join(dir, 'workflow.json'),
-            jsonTarget
-        );
+        const jsonSource = path.join(dir, data.workflowFile);
+        try {
+            fs.copyFileSync(jsonSource, jsonTarget);
+        } catch (e) {
+            skipped++;
+            continue;
+        }
 
         // Copy thumbnail
-        if (data.thumbnailPath) {
+        if (data.thumbnailPath && data.thumbnailFile) {
             const imageTarget = path.join(DIRS.images, `${data.id}.webp`);
-            fs.copyFileSync(data.thumbnailPath, imageTarget);
+            try {
+                fs.copyFileSync(data.thumbnailPath, imageTarget);
+            } catch (e) {
+                // Thumbnail is optional
+            }
         }
 
         // Create workflow index entry
         workflows.push({
             id: data.id,
-            title: data.metadata.name || data.id,
-            description: data.metadata.description || '',
-            author: data.metadata.user?.username || 'Unknown',
-            tags: data.metadata.tags || [],
-            nodes: data.metadata.nodes || [],
-            createdAt: data.metadata.createdAt,
-            updatedAt: data.metadata.updatedAt,
-            views: data.metadata.views || 0,
+            title: data.title,
+            description: data.description.substring(0, 200), // Limit description length
+            author: data.metadata.user_username || 'Unknown',
+            tags: data.tags,
+            nodes: data.nodes,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+            views: 0,
+            price: 0, // All workflows are free
             thumbnail: `/workflows/images/${data.id}.webp`,
             jsonPath: `/workflows/json/${data.id}.json`,
         });
@@ -149,6 +228,7 @@ function processWorkflows() {
     console.log(`📊 Processed: ${processed}`);
     console.log(`⚠️  Skipped: ${skipped}`);
     console.log(`📄 Index file: ${indexPath}`);
+    console.log(`\n💡 Tip: Refresh your browser to see the new workflows!`);
 }
 
 // Run the script
