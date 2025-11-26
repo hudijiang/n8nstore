@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Card from '@/components/ui/Card'
 import Tag from './Tag'
 import { Download, Copy, Check, ExternalLink } from 'lucide-react'
@@ -18,12 +18,20 @@ interface WorkflowCardProps {
 
 export default function WorkflowCard({ id, title, description, author, price, thumbnail, tags = [], locale }: WorkflowCardProps) {
   const [copied, setCopied] = useState(false)
-  const [t, setT] = useState<any>({})
+  const [t, setT] = useState<any>({ free: 'Free', copy_json: 'Copy', download_json: 'Download' })
 
   // Load translations
-  useState(() => {
-    import(`@/messages/${locale}.json`).then(mod => setT(mod.default))
-  })
+  useEffect(() => {
+    async function loadTranslations() {
+      try {
+        const messages = await import(`../../messages/${locale}.json`)
+        setT(messages.default)
+      } catch (error) {
+        console.error('Error loading translations:', error)
+      }
+    }
+    loadTranslations()
+  }, [locale])
 
 
   const handleCopy = async () => {
