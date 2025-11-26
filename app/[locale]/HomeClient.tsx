@@ -137,6 +137,10 @@ export default function HomeClient({ locale, translations }: HomeClientProps) {
                             />
                         ))}
                     </div>
+                ) : (
+                    <div className="text-center py-12">
+                        <p className="text-secondary text-lg">No workflows found</p>
+                    </div>
                 )}
             </div>
         </div>
