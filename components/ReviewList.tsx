@@ -14,9 +14,9 @@ export default function ReviewList({ reviews }: { reviews: any[] }) {
                             <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-2">
                                     <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-bold">
-                                        {review.user.name[0]}
+                                        {review.user?.name?.[0] || 'U'}
                                     </div>
-                                    <span className="font-medium text-sm">{review.user.name}</span>
+                                    <span className="font-medium text-sm">{review.user?.name || 'Anonymous'}</span>
                                 </div>
                                 <span className="text-xs text-gray-400">{new Date(review.created_at).toLocaleDateString()}</span>
                             </div>
