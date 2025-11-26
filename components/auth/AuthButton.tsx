@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useAuth } from './AuthProvider';
-import LoginModal from './LoginModal';
 import { User, LogOut, ShoppingBag } from 'lucide-react';
+import Link from 'next/link';
 
 interface AuthButtonProps {
     locale: string;
@@ -11,7 +11,6 @@ interface AuthButtonProps {
 
 export default function AuthButton({ locale }: AuthButtonProps) {
     const { user, loading, signOut } = useAuth();
-    const [showLoginModal, setShowLoginModal] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
 
     if (loading) {
@@ -22,19 +21,12 @@ export default function AuthButton({ locale }: AuthButtonProps) {
 
     if (!user) {
         return (
-            <>
-                <button
-                    onClick={() => setShowLoginModal(true)}
-                    className="px-6 py-2.5 rounded-full bg-brand text-white font-medium hover:bg-teal-500 transition-all shadow-md hover:shadow-lg"
-                >
-                    登录
-                </button>
-                <LoginModal
-                    isOpen={showLoginModal}
-                    onClose={() => setShowLoginModal(false)}
-                    locale={locale}
-                />
-            </>
+            <Link
+                href={`/${locale}/login`}
+                className="px-6 py-2.5 rounded-full bg-brand text-white font-medium hover:bg-teal-500 transition-all shadow-md hover:shadow-lg"
+            >
+                登录
+            </Link>
         );
     }
 
