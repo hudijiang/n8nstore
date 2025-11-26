@@ -52,29 +52,30 @@ export default function CategoryFilter({ selectedCategory, onCategoryChange }: C
     }
 
     return (
-        <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex flex-wrap gap-2">
             <button
                 onClick={() => onCategoryChange(null)}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap ${selectedCategory === null
-                        ? 'bg-brand text-white shadow-lg shadow-brand/20'
-                        : 'bg-white/50 text-secondary hover:bg-white hover:text-primary'
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === null
+                    ? 'bg-brand text-white shadow-md'
+                    : 'bg-white/60 text-secondary hover:bg-white/80'
                     }`}
             >
                 All
             </button>
+
             {categories.map((category) => (
                 <button
                     key={category.id}
                     onClick={() => onCategoryChange(category.slug)}
-                    className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all whitespace-nowrap flex items-center gap-2 ${selectedCategory === category.slug
-                            ? 'bg-brand text-white shadow-lg shadow-brand/20'
-                            : 'bg-white/50 text-secondary hover:bg-white hover:text-primary'
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${selectedCategory === category.slug
+                        ? 'bg-brand text-white shadow-md'
+                        : 'bg-white/60 text-secondary hover:bg-white/80'
                         }`}
                 >
-                    <span>{category.icon}</span>
-                    <span>{category.name}</span>
-                    {category.count > 0 && (
-                        <span className="text-xs opacity-70">({category.count})</span>
+                    <span className="mr-1">{category.icon}</span>
+                    {category.name}
+                    {category.workflow_count > 0 && (
+                        <span className="ml-2 text-xs opacity-75">({category.workflow_count})</span>
                     )}
                 </button>
             ))}
