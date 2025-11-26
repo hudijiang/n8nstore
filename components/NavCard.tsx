@@ -10,6 +10,8 @@ import { Home, Search, User, ShoppingBag, Globe, ChevronDown } from 'lucide-reac
 
 interface NavCardProps {
     translations: Record<string, string>
+    locale: string
+    authButton: React.ReactNode
 }
 
 const getMenuList = (t: Record<string, string>) => [
@@ -44,13 +46,13 @@ const languages = [
     { code: 'es', label: 'Español' },
 ]
 
-function NavCard({ translations }: NavCardProps) {
+function NavCard({ translations, locale, authButton }: NavCardProps) {
     const pathname = usePathname()
     const [showLanguages, setShowLanguages] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
 
-    // Extract current locale from pathname
-    const currentLocale = pathname.split('/')[1] || 'en'
+    // Use the locale prop instead of extracting from pathname
+    const currentLocale = locale
     const menuList = getMenuList(translations)
 
     return (
@@ -153,6 +155,11 @@ function NavCard({ translations }: NavCardProps) {
                             </div>
                         </motion.div>
                     )}
+                </div>
+
+                {/* Auth Button */}
+                <div className="shrink-0">
+                    {authButton}
                 </div>
             </div>
         </Card>
