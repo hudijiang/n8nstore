@@ -22,7 +22,7 @@ export default function AuthButton({ locale }: AuthButtonProps) {
     if (!user) {
         return (
             <Link
-                href={`/${locale}/login`}
+                href={`/${locale}/login` as any}
                 className="px-6 py-2.5 rounded-full bg-brand text-white font-medium hover:bg-teal-500 transition-all shadow-md hover:shadow-lg"
             >
                 登录
