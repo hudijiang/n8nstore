@@ -121,50 +121,51 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                                     <span>{workflow.views} views</span>
                                 </div>
                             </div>
-                        </div>
-                        <div className="p-8">
-                            <h2 className="text-xl font-bold text-primary mb-4">{t.description}</h2>
-                            <p className="text-secondary leading-relaxed text-lg">{workflow.description}</p>
-
-                            {/* Categories */}
-                            {workflow.categories && workflow.categories.length > 0 && (
-                                <div className="mt-6">
-                                    <h3 className="text-sm font-medium text-secondary mb-3">Categories</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {workflow.categories.map((category: any) => (
-                                            <span
-                                                key={category.id}
-                                                className="px-3 py-1 rounded-full bg-brand/10 text-brand text-sm font-medium"
-                                            >
-                                                {category.icon} {category.name}
-                                            </span>
-                                        ))}
-                                    </div>
+                            <div className="p-6 space-y-6">
+                                <div>
+                                    <h2 className="text-2xl font-bold text-primary mb-4">{t.description || '描述'}</h2>
+                                    <p className="text-secondary leading-relaxed whitespace-pre-wrap">
+                                        {workflow.description}
+                                    </p>
                                 </div>
-                            )}
 
-                            {/* Nodes */}
-                            {workflow.nodes && workflow.nodes.length > 0 && (
-                                <div className="mt-6">
-                                    <h3 className="text-sm font-medium text-secondary mb-3">Nodes Used</h3>
-                                    <div className="flex flex-wrap gap-2">
-                                        {workflow.nodes.slice(0, 10).map((node: any, index: number) => (
-                                            <span
-                                                key={index}
-                                                className="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-xs font-mono"
-                                            >
-                                                {typeof node === 'string' ? node : node.type}
-                                            </span>
-                                        ))}
-                                        {workflow.nodes.length > 10 && (
-                                            <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs">
-                                                +{workflow.nodes.length - 10} more
-                                            </span>
-                                        )}
+                                {workflow.categories && workflow.categories.length > 0 && (
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-primary mb-3">{t.categories || 'Categories'}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {workflow.categories.map((category: any, index: number) => (
+                                                <span
+                                                    key={index}
+                                                    className="px-4 py-2 rounded-full bg-brand/10 text-brand font-medium"
+                                                >
+                                                    {category.icon} {category.name}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
-                                </div>
-                            )}
-                        </div>
+                                )}
+
+                                {workflow.nodes && workflow.nodes.length > 0 && (
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-primary mb-3">{t.nodes_used || 'Nodes Used'}</h3>
+                                        <div className="flex flex-wrap gap-2">
+                                            {workflow.nodes.slice(0, 10).map((node: string, index: number) => (
+                                                <span
+                                                    key={index}
+                                                    className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-mono"
+                                                >
+                                                    {node}
+                                                </span>
+                                            ))}
+                                            {workflow.nodes.length > 10 && (
+                                                <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-500 text-xs">
+                                                    +{workflow.nodes.length - 10} more
+                                                </span>
+                                            )}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                     </Card>
                 </div>
 
@@ -172,32 +173,25 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                 <div className="space-y-6">
                     <Card className="p-6 bg-white/60">
                         <div className="flex items-baseline justify-between mb-8">
-                            <span className="text-secondary font-medium">Price</span>
-                            <span className="text-4xl font-bold text-primary font-averia">
-                                {workflow.price === 0 ? t.free : `$${workflow.price}`}
+                            <span className="text-secondary font-medium">{t.price || 'Price'}</span>
+                            <span className="text-4xl font-bold text-brand">
+                                {workflow.price === 0 ? (t.free || '免费') : `$${workflow.price}`}
                             </span>
                         </div>
 
-                        <div className="space-y-3">
-                            <a
-                                href={workflow.jsonPath}
-                                download
-                                className="w-full py-4 rounded-full bg-brand text-white font-bold shadow-lg shadow-brand/20 hover:bg-teal-500 transition-all active:scale-95 flex items-center justify-center gap-2"
-                            >
-                                <Download className="w-5 h-5" />
-                                {workflow.price === 0 ? t.get_workflow : t.buy_now}
-                            </a>
-                        </div>
+                        <button className="w-full py-4 rounded-xl bg-brand text-white font-medium hover:bg-teal-500 transition-all shadow-md hover:shadow-lg mb-4">
+                            {t.get_workflow || '获取工作流'}
+                        </button>
 
-                        <div className="mt-8 pt-8 border-t border-gray-200/50 space-y-4">
-                            <div className="flex justify-between text-sm">
-                                <span className="text-secondary">Views</span>
-                                <span className="font-medium text-primary">{workflow.views}</span>
+                        <div className="space-y-4 pt-4 border-t border-gray-200">
+                            <div className="flex justify-between items-center">
+                                <span className="text-secondary text-sm">{t.views || 'Views'}</span>
+                                <span className="text-primary font-medium">{workflow.views}</span>
                             </div>
-                            <div className="flex justify-between text-sm">
-                                <span className="text-secondary">{t.last_updated}</span>
-                                <span className="font-medium text-primary">
-                                    {new Date(workflow.updatedAt).toLocaleDateString()}
+                            <div className="flex justify-between items-center">
+                                <span className="text-secondary text-sm">{t.last_updated || '最后更新'}</span>
+                                <span className="text-primary font-medium">
+                                    {new Date(workflow.updated_at).toLocaleDateString()}
                                 </span>
                             </div>
                         </div>
