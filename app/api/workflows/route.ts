@@ -1,6 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 import { NextRequest, NextResponse } from 'next/server';
 
+// Force dynamic rendering to prevent build-time errors
+export const dynamic = 'force-dynamic';
+
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
 
@@ -38,7 +41,7 @@ export async function GET(request: NextRequest) {
             // Let's keep category filtering in memory for now as it wasn't the issue, 
             // BUT we must be careful because pagination happens before in-memory filtering.
             // Ideally ALL filtering should be DB level. 
-            
+
             // However, the immediate fix for "search" is to add the search query.
             // Let's stick to the plan: Move Search to Database Query.
         }
@@ -110,7 +113,7 @@ export async function GET(request: NextRequest) {
         // Apply category filter in memory if needed (LIMITATION: this still has the pagination issue for categories)
         // But we fixed the search issue.
         let filteredWorkflows = enrichedWorkflows;
-        
+
         if (category) {
             filteredWorkflows = filteredWorkflows.filter(w =>
                 w.categories.some((c: any) => c.slug === category)
