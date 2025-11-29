@@ -61,5 +61,7 @@
   "price": "价格",
   "views": "浏览量",
   "categories": "分类",
-  "nodes_used": "使用的节点"
+  "nodes_used": "使用的节点",
+  "nav_login": "登录",
+  "nav_logout": "登出"
 }

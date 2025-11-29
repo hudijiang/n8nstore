@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import { createServerClient, type CookieOptions } from '@supabase/ssr'
 
-const locales = ['en', 'ja', 'zh', 'de', 'fr', 'es']
+const locales = ['en']
 
 export async function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl

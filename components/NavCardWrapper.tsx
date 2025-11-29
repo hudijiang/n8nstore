@@ -8,5 +8,5 @@ async function getMessages(locale: string) {
 
 export default async function NavCardWrapper({ locale }: { locale: string }) {
     const translations = await getMessages(locale)
-    return <NavCard translations={translations} locale={locale} authButton={<AuthButton locale={locale} />} />
+    return <NavCard translations={translations} locale={locale} authButton={<AuthButton locale={locale} translations={translations} />} />
 }

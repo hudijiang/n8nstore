@@ -1,5 +1,6 @@
 import Card from '@/components/ui/Card'
 import { Copy, Download } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
 import { notFound } from 'next/navigation'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import RelatedWorkflows from '@/components/RelatedWorkflows'
@@ -134,9 +135,9 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                         <div className="p-6 space-y-6">
                             <div>
                                 <h2 className="text-2xl font-bold text-primary mb-4">{t.description || '描述'}</h2>
-                                <p className="text-secondary leading-relaxed whitespace-pre-wrap">
-                                    {workflow.description}
-                                </p>
+                                <div className="prose prose-sm max-w-none prose-headings:text-primary prose-p:text-secondary prose-a:text-brand prose-a:no-underline hover:prose-a:underline prose-strong:text-primary prose-code:text-brand prose-code:bg-brand/10 prose-code:px-1 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none">
+                                    <ReactMarkdown>{workflow.description}</ReactMarkdown>
+                                </div>
                             </div>
 
                             {workflow.categories && workflow.categories.length > 0 && (

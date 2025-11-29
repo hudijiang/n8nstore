@@ -4,9 +4,8 @@ import Card from '@/components/ui/Card'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState, memo } from 'react'
-import { motion } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import { Home, Search, User, ShoppingBag, Globe, ChevronDown } from 'lucide-react'
+import { Home, Search, User, ShoppingBag } from 'lucide-react'
 
 interface NavCardProps {
     translations: Record<string, string>
@@ -37,18 +36,8 @@ const getMenuList = (t: Record<string, string>) => [
     },
 ]
 
-const languages = [
-    { code: 'en', label: 'English' },
-    { code: 'zh', label: '中文' },
-    { code: 'ja', label: '日本語' },
-    { code: 'de', label: 'Deutsch' },
-    { code: 'fr', label: 'Français' },
-    { code: 'es', label: 'Español' },
-]
-
 function NavCard({ translations, locale, authButton }: NavCardProps) {
     const pathname = usePathname()
-    const [showLanguages, setShowLanguages] = useState(false)
     const [searchQuery, setSearchQuery] = useState('')
 
     // Use the locale prop instead of extracting from pathname
@@ -117,56 +106,6 @@ function NavCard({ translations, locale, authButton }: NavCardProps) {
                             className="w-full pl-12 pr-4 py-2 rounded-full bg-white/50 border border-gray-200/50 text-sm text-primary placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-brand/50 focus:bg-white transition-all"
                         />
                     </div>
-                </div>
-
-                {/* Language Switcher */}
-                <div
-                    className="relative shrink-0"
-                    onMouseEnter={() => setShowLanguages(true)}
-                    onMouseLeave={() => setShowLanguages(false)}
-                >
-                    <button
-                        className="flex items-center gap-2 px-4 py-2 rounded-full hover:bg-white/50 transition-colors text-secondary hover:text-primary"
-                    >
-                        <Globe className="w-5 h-5" />
-                        <span className="text-sm font-medium">
-                            {languages.find(l => l.code === currentLocale)?.label}
-                        </span>
-                        <ChevronDown className={cn(
-                            "w-4 h-4 transition-transform",
-                            showLanguages && "rotate-180"
-                        )} />
-                    </button>
-
-                    {showLanguages && (
-                        <motion.div
-                            initial={{ opacity: 0, y: -10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            className="absolute right-0 top-full pt-2 pb-2"
-                        >
-                            <div className="bg-white rounded-[20px] shadow-glass-card border border-gray-200/50 py-2 min-w-[150px]">
-                                {languages.map((lang) => {
-                                    const newPath = pathname.replace(`/${currentLocale}`, `/${lang.code}`)
-                                    const isCurrentLang = lang.code === currentLocale
-
-                                    return (
-                                        <Link
-                                            key={lang.code}
-                                            href={newPath as any}
-                                            className={cn(
-                                                'block px-4 py-2 text-sm transition-colors',
-                                                isCurrentLang
-                                                    ? 'bg-brand/10 text-brand font-medium'
-                                                    : 'text-secondary hover:bg-gray-50 hover:text-primary'
-                                            )}
-                                        >
-                                            {lang.label}
-                                        </Link>
-                                    )
-                                })}
-                            </div>
-                        </motion.div>
-                    )}
                 </div>
 
                 {/* Auth Button */}

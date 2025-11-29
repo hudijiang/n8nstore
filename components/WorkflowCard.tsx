@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Card from '@/components/ui/Card'
 import Tag from './Tag'
 import { Download, Copy, Check, ExternalLink } from 'lucide-react'
+import ReactMarkdown from 'react-markdown'
 
 interface WorkflowCardProps {
   id: string
@@ -24,6 +25,10 @@ export default function WorkflowCard({ id, title, description, author, price, th
   // Load translations
   useEffect(() => {
     async function loadTranslations() {
+      if (!locale) {
+        console.warn('Locale is undefined, skipping translation load')
+        return
+      }
       try {
         const messages = await import(`../../messages/${locale}.json`)
         setT(messages.default)
@@ -64,10 +69,10 @@ export default function WorkflowCard({ id, title, description, author, price, th
   }
 
   return (
-    <a href={`/${locale}/workflow/${id}`} className="block">
+    <div className="block h-full">
       <Card className="group relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg p-0 flex flex-col h-full">
         {/* Thumbnail Section */}
-        <div className="relative h-48 w-full overflow-hidden rounded-t-[40px] bg-gray-100">
+        <Link href={`/${locale}/workflow/${id}`} className="relative h-48 w-full overflow-hidden rounded-t-[40px] bg-gray-100 block">
           <img
             src={thumbnail}
             alt={title}
@@ -80,7 +85,7 @@ export default function WorkflowCard({ id, title, description, author, price, th
               {price === 0 ? (t.free || 'Free') : `$${price}`}
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* Content Section */}
         <div className="p-6 flex flex-col flex-1">
@@ -92,7 +97,6 @@ export default function WorkflowCard({ id, title, description, author, price, th
                   key={index}
                   href={`/${locale}?category=${encodeURIComponent(tag)}` as any}
                   className="px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-medium hover:bg-brand/20 transition-colors"
-                  onClick={(e: React.MouseEvent) => e.stopPropagation()}
                 >
                   {tag}
                 </Link>
@@ -104,10 +108,18 @@ export default function WorkflowCard({ id, title, description, author, price, th
               )}
             </div>
           )}
-          <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1">{title}</h3>
-          <p className="text-secondary text-sm leading-relaxed line-clamp-2 mb-6 flex-1">
-            {description}
-          </p>
+          <Link href={`/${locale}/workflow/${id}`} className="block">
+            <h3 className="text-xl font-bold text-primary mb-2 line-clamp-1 hover:text-brand transition-colors">{title}</h3>
+          </Link>
+
+          <div className="text-secondary text-sm leading-relaxed line-clamp-2 mb-6 flex-1 prose prose-sm max-w-none prose-p:my-0 prose-p:leading-relaxed prose-headings:hidden prose-img:hidden prose-a:text-brand prose-a:no-underline hover:prose-a:underline">
+            <ReactMarkdown
+              allowedElements={['p', 'strong', 'em', 'span', 'code', 'a']}
+              unwrapDisallowed={true}
+            >
+              {description}
+            </ReactMarkdown>
+          </div>
 
           {/* Actions */}
           <div className="flex items-center gap-2 mt-auto pt-4 border-t border-gray-100/50">
@@ -135,6 +147,6 @@ export default function WorkflowCard({ id, title, description, author, price, th
           </div>
         </div>
       </Card>
-    </a>
+    </div>
   )
 }

@@ -1,6 +1,8 @@
 'use client';
 
 import Card from './ui/Card';
+import { useEffect, useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
 
 interface AdSlotProps {
     size: 'banner' | 'sidebar' | 'square' | 'leaderboard';
@@ -16,6 +18,33 @@ const adSizes = {
 
 export default function AdSlot({ size, className = '' }: AdSlotProps) {
     const { width, height, label } = adSizes[size];
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const checkVisibility = async () => {
+            // Check env var
+            const isEnabled = process.env.NEXT_PUBLIC_SHOW_ADS === 'true';
+
+            // Check auth
+            const supabase = createClient(
+                process.env.NEXT_PUBLIC_SUPABASE_URL!,
+                process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+            );
+            const { data: { session } } = await supabase.auth.getSession();
+            const isMember = !!session;
+
+            // Show if enabled OR is member (as requested)
+            if (isEnabled || isMember) {
+                setIsVisible(true);
+            }
+        };
+
+        checkVisibility();
+    }, []);
+
+    if (!isVisible) {
+        return null;
+    }
 
     return (
         <Card

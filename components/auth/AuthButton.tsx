@@ -7,9 +7,10 @@ import Link from 'next/link';
 
 interface AuthButtonProps {
     locale: string;
+    translations: Record<string, string>;
 }
 
-export default function AuthButton({ locale }: AuthButtonProps) {
+export default function AuthButton({ locale, translations }: AuthButtonProps) {
     const { user, loading, signOut } = useAuth();
     const [showMenu, setShowMenu] = useState(false);
 
@@ -25,7 +26,7 @@ export default function AuthButton({ locale }: AuthButtonProps) {
                 href={`/${locale}/login` as any}
                 className="px-6 py-2.5 rounded-full bg-brand text-white font-medium hover:bg-teal-500 transition-all shadow-md hover:shadow-lg"
             >
-                登录
+                {translations.nav_login || 'Login'}
             </Link>
         );
     }
@@ -69,14 +70,14 @@ export default function AuthButton({ locale }: AuthButtonProps) {
                                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-gray-700"
                             >
                                 <User className="w-5 h-5" />
-                                <span>个人资料</span>
+                                <span>{translations.nav_profile || '个人资料'}</span>
                             </a>
                             <a
                                 href={`/${locale}/user`}
                                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 transition-colors text-gray-700"
                             >
                                 <ShoppingBag className="w-5 h-5" />
-                                <span>我的订单</span>
+                                <span>{translations.nav_orders || '我的订单'}</span>
                             </a>
                         </div>
 
@@ -89,7 +90,7 @@ export default function AuthButton({ locale }: AuthButtonProps) {
                                 className="flex items-center gap-3 px-4 py-2.5 hover:bg-red-50 transition-colors text-red-600 w-full"
                             >
                                 <LogOut className="w-5 h-5" />
-                                <span>登出</span>
+                                <span>{translations.nav_logout || '登出'}</span>
                             </button>
                         </div>
                     </div>

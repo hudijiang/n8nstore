@@ -63,5 +63,7 @@
   "price": "Price",
   "views": "Views",
   "categories": "Categories",
-  "nodes_used": "Nodes Used"
+  "nodes_used": "Nodes Used",
+  "nav_login": "Login",
+  "nav_logout": "Logout"
 }
