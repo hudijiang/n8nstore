@@ -96,12 +96,24 @@ function NavCard({ translations, locale, authButton }: NavCardProps) {
                 {/* Search Bar */}
                 <div className="flex-1 max-w-md">
                     <div className="relative">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary" />
+                        <Search
+                            className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary cursor-pointer hover:text-primary transition-colors"
+                            onClick={() => {
+                                if (searchQuery.trim()) {
+                                    window.location.href = `/${currentLocale}?search=${encodeURIComponent(searchQuery)}`
+                                }
+                            }}
+                        />
                         <input
                             type="text"
                             placeholder={translations.search_workflows || 'Search workflows...'}
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' && searchQuery.trim()) {
+                                    window.location.href = `/${currentLocale}?search=${encodeURIComponent(searchQuery)}`
+                                }
+                            }}
                             className="w-full pl-12 pr-4 py-2 rounded-full bg-white/50 border border-gray-200/50 text-sm text-primary placeholder:text-secondary focus:outline-none focus:ring-2 focus:ring-brand/50 focus:bg-white transition-all"
                         />
                     </div>

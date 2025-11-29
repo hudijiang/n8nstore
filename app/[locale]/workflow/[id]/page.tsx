@@ -7,13 +7,20 @@ import AdSlot from '@/components/AdSlot'
 import type { Metadata } from 'next'
 
 async function getMessages(locale: string) {
-    const mod = await import(`../../../../messages/${locale}.json`)
-    return mod.default as Record<string, string>
+    try {
+        const mod = await import(`../../../../messages/${locale}.json`)
+        return mod.default as Record<string, string>
+    } catch (error) {
+        console.error(`Error loading messages for ${locale}:`, error)
+        return {}
+    }
 }
 
 async function getWorkflow(id: string, locale: string) {
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001'
+        // Force localhost:3000 for now as env var might be wrong
+        const baseUrl = 'http://localhost:3000'
+        // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
         const response = await fetch(`${baseUrl}/api/workflows/${id}?locale=${locale}`, {
             cache: 'no-store'
         })
@@ -31,7 +38,8 @@ async function getWorkflow(id: string, locale: string) {
 
 async function getWorkflowJSON(jsonUrl: string) {
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3001'
+        const baseUrl = 'http://localhost:3000'
+        // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
         const response = await fetch(`${baseUrl}${jsonUrl}`, {
             cache: 'no-store'
         })
@@ -151,12 +159,12 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                                 <div>
                                     <h3 className="text-lg font-semibold text-primary mb-3">{t.nodes_used || 'Nodes Used'}</h3>
                                     <div className="flex flex-wrap gap-2">
-                                        {workflow.nodes.slice(0, 10).map((node: string, index: number) => (
+                                        {workflow.nodes.slice(0, 10).map((node: any, index: number) => (
                                             <span
                                                 key={index}
                                                 className="px-3 py-1 rounded-full bg-gray-100 text-gray-600 text-sm font-mono"
                                             >
-                                                {node}
+                                                {node.type}
                                             </span>
                                         ))}
                                         {workflow.nodes.length > 10 && (
