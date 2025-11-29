@@ -201,7 +201,7 @@ export default async function WorkflowPage({ params }: { params: { id: string; l
                             <div className="flex justify-between items-center">
                                 <span className="text-secondary text-sm">{t.last_updated || '最后更新'}</span>
                                 <span className="text-primary font-medium">
-                                    {new Date(workflow.updated_at).toLocaleDateString()}
+                                    {new Date(workflow.updatedAt).toLocaleDateString()}
                                 </span>
                             </div>
                         </div>
